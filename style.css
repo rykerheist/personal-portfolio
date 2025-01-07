@@ -197,7 +197,6 @@ body {
 
 /* --- 5. HERO SECTION --- */
 .hero {
-    background-color: var(--secondary-color);
     color: var(--text-color-light);
     text-align: center;
     position: relative;
@@ -205,12 +204,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
+    align-items
 }
 
 .hero::before {
@@ -226,7 +220,7 @@ body {
 
 .hero-image-container {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     position: absolute;
     top: 0;
     left: 0;
@@ -836,8 +830,9 @@ a:hover {
 
 .full-width {
     width: 100%;
-    box-sizing: border-box;
+    /* REMOVE box-sizing: border-box; */
 }
+
 
 /* --- 14. ANIMATIONS --- */
 .site-logo:hover {
@@ -932,6 +927,16 @@ a:hover {
         overflow-x: hidden;
     }
 
+    /* Title and Subtitle Text Size */
+    .site-title {
+        font-size: 1rem;
+        /* Adjust size as needed */
+    }
+
+    .site-subtitle {
+        font-size: 0.6rem;
+        /* Adjust size as needed */
+    }
 }
 
 /* Intro Section */
@@ -966,9 +971,9 @@ a:hover {
     }
 }
 
-@media (min-width: 991px) and (max-width: 1260px) {
+@media (min-width: 991px) {
     .process-steps {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         justify-items: center;
     }
 }
