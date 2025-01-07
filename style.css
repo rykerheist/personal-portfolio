@@ -171,12 +171,12 @@ a:hover {
     position: sticky;
     top: 0;
     z-index: 50;
-    transition: height 0.3s ease, background-color 0.3s ease;
+    transition: height 0.3s ease, background-color 0.3s ease; /* Add transitions for smooth effect */
 }
 
 .site-header.shrunken {
-    height: 60px;
-    background-color: rgba(0, 0, 0, 0.9);
+    height: 60px; /* Adjust this to your desired shrunken header height */
+    background-color: rgba(0, 0, 0, 0.9); /* Optional: Make slightly transparent */
 }
 
 .header-content {
@@ -196,11 +196,11 @@ a:hover {
     display: block;
     height: 150px;
     width: auto;
-    transition: height 0.3s ease, transform 0.3s ease;
+    transition: height 0.3s ease, transform 0.3s ease; /* Add transition to height */
 }
 
 .site-header.shrunken .site-logo {
-    height: 50px;
+    height: 50px; /* Adjust this to your desired shrunken logo height */
 }
 
 .site-logo:hover {
@@ -234,6 +234,8 @@ a:hover {
     white-space: nowrap;
 }
 
+/* ... Other CSS up to NAVIGATION section ... */
+
 /* 4. NAVIGATION */
 .menu-toggle {
     display: none; /* Hidden by default on larger screens */
@@ -257,10 +259,9 @@ a:hover {
 .site-nav {
     display: block; /* Visible by default on larger screens */
     position: relative;
-    margin-left: auto; /* Push the nav to the right */
 }
 
-/* Hide navigation when header is shrunken */
+/* Hide navigation when header is shrunken (Corrected Selector) */
 .site-header.shrunken .site-nav {
     display: none;
 }
@@ -291,6 +292,8 @@ a:hover {
     background-color: var(--primary-color);
     color: var(--secondary-color);
 }
+
+/* ... Rest of CSS as before ... */
 
 /* 5. HERO SECTION */
 .hero {
