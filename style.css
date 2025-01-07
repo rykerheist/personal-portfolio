@@ -4,49 +4,67 @@
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: Arial, sans-serif; /* Base font, similar to "LEARNING DESIGN" */
     margin: 0;
     line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
+    color: #000; /* Black text */
+    background-color: #e6e6e6; /* Light Gray background */
 }
 
-h1, h2, h3 {
-    font-weight: 800; /* Make headings extra bold */
+h1, h2, h3, .hero-title, .site-title {
+    font-family: Impact, sans-serif; /* Impact font for headings */
+    font-weight: 800; 
     line-height: 1.2;
     margin-top: 0;
 }
 
 h1 {
     font-size: 2.5rem;
-    margin-bottom: 0.5rem; /* Added spacing between headings */
+    margin-bottom: 0.5rem; 
 }
 
 h2 {
-    font-size: 2.2rem;
-    margin-bottom: 0.5rem; /* Added spacing between headings */
+    font-size: 4.2rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(to right, #00FF00, #00cc00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px; /* Add padding for underline */
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #000; /* Black underline */
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.4s ease-out;
+}
+
+.section-title:hover::after {
+    transform: scaleX(1);
 }
 
 h3 {
-    font-size: 1.8rem; /* Increased from 1.6 to create more visual distinction */
-    margin-bottom: 0.5rem; /* Added spacing between headings */
+    font-size: 1.8rem; 
+    margin-bottom: 0.5rem; 
 }
 
 a {
-    color: #0077cc;
+    color: #00FF00; /* Electric Green for links */
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #005fa3;
-}
-
-.section-divider {
-    width: 100%;
-    height: 5px;
-    background-image: linear-gradient(to right, #000 0%, #666 25%, #fff 50%, #666 75%, #000 100%); /* More stops */
-    margin: 60px 0;
+    color: #00cc00; /* Slightly darker green on hover */
 }
 
 .container {
@@ -58,28 +76,27 @@ a:hover {
 .section-title {
     text-align: center;
     margin-bottom: 3rem;
-    color: #333;
+    color: #000;
     position: relative;
     display: inline-block;
     padding-bottom: 10px;
 }
 
-/* Updated Section Title Underline */
 .section-title::after {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 0; /* Changed from 50% */
-    width: 100%; /* Changed from 0 */
+    left: 0; 
+    width: 100%; 
     height: 3px;
-    background-color: #000; /* Black underline */
-    transform: scaleX(0); /* Start with 0 width (scaled on X-axis) */
-    transform-origin: center; /* Changed transformation origin to center */
-    transition: transform 0.4s ease-out; /* Animate the transform property */
+    background-color: #00FF00; /* Electric Green underline */
+    transform: scaleX(0); 
+    transform-origin: center; 
+    transition: transform 0.4s ease-out; 
 }
 
 .section-title:hover::after {
-    transform: scaleX(1); /* Expand to full width on hover (scaled on X-axis) */
+    transform: scaleX(1); 
 }
 
 /* SKIP LINK */
@@ -88,7 +105,7 @@ a:hover {
     top: -40px;
     left: 0;
     background: #000;
-    color: white;
+    color: #fff; /* White text */
     padding: 10px;
     z-index: 100;
     text-decoration: none;
@@ -100,7 +117,7 @@ a:hover {
 
 /* HEADER STYLES */
 .site-header {
-    background-color: #fff;
+    background-color: #000; 
     padding: 20px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: sticky;
@@ -111,21 +128,24 @@ a:hover {
 .header-content {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; /* Push logo to the left, other items to the right */
 }
 
-.site-title {
-    font-size: 2.2rem;
-    margin: 0;
-    color: #000;
-    text-shadow: none;
-    font-weight: 800;
+.site-nav {
+    display: block;
+    margin-left: auto; /* Push the navigation to the right */
+}
+
+.site-logo {
+    display: block; 
+    height: 80px; 
+    width: auto; 
 }
 
 .site-subtitle {
     font-size: 1.2rem;
     margin: 0;
-    color: #666;
+    color: #00FF00; /* Electric Green subtitle */
     font-weight: normal;
 }
 
@@ -140,7 +160,7 @@ a:hover {
 
 .menu-toggle i {
     font-size: 1.5rem;
-    color: #333;
+    color: #00FF00; /* Electric Green */
 }
 
 .site-nav {
@@ -156,14 +176,14 @@ a:hover {
 
 .nav-link {
     padding: 15px 20px;
-    color: #333;
-    font-weight: 700; /* Make navigation links bold */
+    color: #fff; /* White text */
+    font-weight: 700; 
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 .nav-link:hover {
-    background-color: #000;
-    color: #fff;
+    background-color: #00FF00; /* Electric Green on hover */
+    color: #000; /* Black text */
     transform: translateY(-3px);
 }
 
@@ -173,18 +193,18 @@ a:hover {
     color: #fff;
     text-align: center;
     padding: 0px 0px;
-    position: relative; /* Important for absolute positioning of children */
+    position: relative; 
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center vertically using flexbox */
-    align-items: center;     /* Center horizontally using flexbox */
-    min-height: 100vh;       /* Ensure it takes at least full viewport height */
+    justify-content: center; 
+    align-items: center;     
+    min-height: 100vh;       
 }
 
 .hero-image-container {
     width: 100%;
-    height: 100vh; /* Update height */
+    height: 100vh; 
     overflow: hidden;
     position: absolute; 
     z-index: 0; 
@@ -198,12 +218,12 @@ a:hover {
 }
 
 .hero-text-container {
-    background-color: rgba(0, 0, 0, 0.65); /* Increased opacity for better contrast */
-    color: #fff;
+    background-color: rgba(0, 0, 0, 0.65); 
+    color: #00FF00;
     padding: 50px 20px;
     width: 100%;
     position: relative;
-    z-index: 1;        /* Ensure text is above the image */
+    z-index: 1;        
 }
 
 .hero::before {
@@ -213,10 +233,10 @@ a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.2) 1px, transparent 1px); /* Increased particle opacity */
-    background-size: 40px 40px; /* Adjust particle size */
+    background-image: radial-gradient(circle, rgba(0, 255, 0, 0.2) 1px, transparent 1px); 
+    background-size: 40px 40px; 
     opacity: 0.8; 
-    animation: moveParticles 30s linear infinite; /* Slower particle movement */
+    animation: moveParticles 30s linear infinite; 
 }
 
 @keyframes moveParticles {
@@ -224,151 +244,189 @@ a:hover {
         background-position: 0 0;
     }
     to {
-        background-position: 800px 400px; /* Adjust movement */
+        background-position: 800px 400px; 
     }
 }
 
 .hero-title {
-    font-size: 3.8rem; /* Larger, bolder title */
+    font-size: 3.8rem; 
     margin-bottom: 1.5rem;
-    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6); /* Increased text-shadow */
-    font-weight: 800; /* Extra bold */
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6); 
+    font-weight: 800; 
     line-height: 1.2;
 }
 
 .hero-subtitle {
-    font-size: 1.7rem; /* Larger subtitle */
+    font-size: 1.7rem; 
     margin-bottom: 2.5rem;
-    font-weight: 300; /* Lighter font weight */
+    font-weight: 300; 
     line-height: 1.5;
+    color: #fff; /* White subtitle */
 }
 
 .hero-button {
-    background-color: #fff;
+    background-color: #00FF00;
     color: #000;
-    font-weight: 700; /* Bold button text */
-    padding: 18px 36px; /* Larger button */
-    border-radius: 50px; /* Pill-shaped button */
+    font-weight: 700; 
+    padding: 18px 36px; 
+    border-radius: 50px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
-    text-transform: uppercase; /* Uppercase text */
-    letter-spacing: 1px; /* Add letter spacing */
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
 }
 
 .hero-button:hover {
-    background-color: #eee;
+    background-color: #00cc00;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     transform: translateY(-2px);
 }
 
-/* ... other CSS ... */
-
 /* INTRO SECTION */
 .intro {
-    background-color: #f8f8f8;
-    padding: 80px 0; /* More padding */
+    background-color: #e6e6e6; 
+    padding: 80px 0; 
 }
 
 .intro-content {
     display: grid;
-    grid-template-columns: 1fr; /* Default to a single column layout */
-    gap: 40px; /* Increased gap */
-    max-width: 900px; /* Limit content width */
-    margin: 0 auto; /* Center content */
+    grid-template-columns: 1fr; 
+    gap: 40px; 
+    max-width: 900px; 
+    margin: 0 auto; 
 }
 
 .intro-text {
-    font-size: 1.4rem; /* Larger font size */
+    font-size: 1.4rem; 
     line-height: 1.7;
     margin-bottom: 20px;
 }
 
 .intro-text strong {
-    font-weight: 700; /* Make strong text bold */
-    color: #000; /* Highlight strong text */
+    font-weight: 700; 
+    color: #000; 
 }
 
 .intro-content h3 {
-    font-size: 2rem; /* Larger heading */
+    font-size: 2rem; 
     margin-bottom: 20px;
-    font-weight: 800; /* Extra bold */
+    font-weight: 800; 
     color: #000;
 }
 
 .intro-list {
-    list-style-type: none; /* Remove default bullet points */
+    list-style-type: none; 
     padding: 0;
 }
 
 .intro-list li {
-    font-size: 1.3rem; /* Larger font size */
+    font-size: 1.3rem; 
     line-height: 1.8;
     margin-bottom: 15px;
-    padding-left: 40px; /* Indent for custom bullet */
-    position: relative; /* For custom bullet positioning */
+    padding-left: 40px; 
+    position: relative; 
 }
 
 .intro-list li::before {
-    content: "•"; /* Custom bullet point */
+    content: "•"; 
     position: absolute;
     left: 0;
     top: 0;
-    font-size: 2rem; /* Larger bullet */
-    color: #000; /* Black bullet */
+    font-size: 2rem; 
+    color: #000; 
     line-height: 1;
 }
 
 /* Box Styling for Intro Content */
 .intro-box {
-    border: 2px solid #000; /* Solid black border */
-    border-radius: 10px; /* Rounded corners */
-    padding: 30px; /* Padding inside the box */
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-    background-color: #fff; /* White background */
+    border: 2px solid #000; 
+    border-radius: 10px; 
+    padding: 30px; 
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); 
+    background-color: #fff; /* Default white background */
+}
+
+/* Specific Styling for the "My methods..." box */
+.intro-box:nth-child(2) { /* Selects the second intro-box */
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+}
+
+.intro-box:nth-child(2) h3 {
+    color: #00FF00; /* Electric green for h3 (stays the same) */
+}
+
+.intro-box:nth-child(2) li::before {
+    color: #00FF00; /* Electric green for bullet points (stays the same) */
+}
+
+
+.intro-box h3 {
+    color: #00FF00; /* Electric green for h3 in intro boxes */
+}
+
+.intro-box li::before {
+    color: #00FF00; /* Electric green for bullet points in intro boxes */
 }
 
 /* Callout Styling */
 .intro-callout {
-    background-color: #000; /* Black background */
-    color: #fff; /* White text */
-    border-radius: 10px; /* Rounded corners */
-    padding: 30px; /* Padding inside the box */
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-    font-size: 1.2rem; /* Slightly larger font size */
+    background-color: #000; 
+    color: #00FF00; 
+    border-radius: 10px; 
+    padding: 30px; 
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); 
+    font-size: 1.2rem; 
     line-height: 1.6;
+    border: 2px solid #00FF00; 
 }
+
+
 
 .intro-callout strong {
-    color: #fff; /* Ensure strong text is also white */
+    color: #00FF00; 
 }
 
+/* Media Queries for Intro Section */
+@media (min-width: 768px) {
+    .intro-content {
+        grid-template-columns: 1fr 1fr; 
+        align-items: center; 
+    }
 
-
-/* ... rest of your CSS ... */
+    .intro-callout {
+        grid-column: span 2; 
+    }
+}
 
 /* WORK SECTION */
+.work {
+    background-color: #e6e6e6; /* Light Gray background */
+    padding: 80px 0;
+}
+
 .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Increased minmax value for larger cards */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
     gap: 3rem;
 }
 
 .project {
     overflow: hidden;
-    border-radius: 10px; /* Rounded corners for project cards */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
 .project:hover {
-    transform: translateY(-5px); /* Lift on hover */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); 
 }
 
 .project-image-container {
     background-color: #fff;
     padding: 0;
-    border-radius: 10px 10px 0 0; /* Rounded corners only on top */
+    border-radius: 10px 10px 0 0; 
     margin-bottom: 1rem;
     overflow: hidden;
 }
@@ -376,7 +434,7 @@ a:hover {
 .project-image {
     width: 100%;
     height: auto;
-    border-radius: 10px 10px 0 0; /* Rounded corners only on top */
+    border-radius: 10px 10px 0 0; 
     display: block;
     transition: transform 0.4s ease-out;
 }
@@ -388,10 +446,10 @@ a:hover {
 .project-title {
     margin-bottom: 0.5rem;
     color: #000;
-    font-size: 1.5rem; /* Increased font size */
-    font-weight: 700; /* Bold title */
-    line-height: 1.3; /* Added line-height for better readability */
-    max-height: 3em; /* Limit to 2 lines of text */
+    font-size: 1.5rem; 
+    font-weight: 700; 
+    line-height: 1.3; 
+    max-height: 3em; 
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -404,16 +462,17 @@ a:hover {
 
 .project-button {
     background-color: #000;
-    color: #fff;
-    border-radius: 50px; /* Pill-shaped button */
+    color: #00FF00; /* Electric Green text */
+    border-radius: 50px; 
     transition: all 0.3s ease;
-    padding: 12px 25px; /* Adjust padding */
-    font-weight: 600; /* Bold text */
-    text-transform: uppercase; /* Uppercase text */
+    padding: 12px 25px; 
+    font-weight: 600; 
+    text-transform: uppercase; 
 }
 
 .project-button:hover {
-    background-color: #333;
+    background-color: #00FF00;
+    color: #000; /* Black text */
     transform: scale(1.05);
 }
 
@@ -421,58 +480,36 @@ a:hover {
 .about {
     background-color: #fff;
     padding: 80px 0;
-}
-
-.about-content {
-    display: flex;
-    gap: 4rem;
-    align-items: center;
-}
-
-.about-image-container {
-    flex: 0 0 350px; /* Larger image */
-    position: relative;
-    border-radius: 50%; /* Make the container circular */
-    overflow: hidden; /* Hide any overflowing image */
-}
-
-.profile-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensure the image covers the container */
-    object-position: center; /* Center the image */
-    display: block;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-image: linear-gradient(to bottom, #fff, #e0ffe0); /* Light gradient */
 }
 
 /* ... other CSS ... */
 
-/* ABOUT SECTION */
-.about {
-    background-color: #fff;
-    padding: 80px 0;
-}
-
 .about-content {
-    display: grid; /* Use grid layout */
-    grid-template-columns: 1fr; /* Single column by default */
-    gap: 4rem;
+    display: grid; 
+    grid-template-columns: 1fr; 
+    gap: 4rem; /* Add gap between grid items */
     align-items: center;
 }
 
 .about-image-container {
-    flex: 0 0 350px; /* Larger image */
+    flex: 0 0 350px; 
     position: relative;
-    border-radius: 50%; /* Make the container circular */
-    overflow: hidden; /* Hide any overflowing image */
-    justify-self: center; /* Center the image in the grid column */
+    border-radius: 50%; 
+    overflow: hidden; 
+    justify-self: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+.about-image-container:hover {
+    transform: scale(1.05); /* Zoom slightly */
+]]}
 
 .profile-image {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensure the image covers the container */
-    object-position: center; /* Center the image */
+    object-fit: cover; 
+    object-position: center; 
     display: block;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -483,11 +520,19 @@ a:hover {
 
 /* Box Styling for About Content */
 .about-box {
-    border: 2px solid #000; /* Solid black border */
-    border-radius: 10px; /* Rounded corners */
-    padding: 30px; /* Padding inside the box */
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-    background-color: #f8f8f8; /* Light gray background */
+    border: 2px solid #00FF00; /* Electric green border */
+    border-radius: 10px; 
+    padding: 30px; 
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); 
+    background-color: #f0fff0; /* Very light green background */
+    margin-bottom: 30px; /* Add margin to the bottom of each box */
+}
+
+.about-text h3 {
+    font-size: 1.5rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    color: #00FF00; /* Electric green headings */
 }
 
 .about-text p {
@@ -496,17 +541,11 @@ a:hover {
     margin-bottom: 1.5rem;
 }
 
-.about-text h3 {
-    font-size: 1.5rem;
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-    color: #000;
-}
 
 .about-text ul {
     margin-bottom: 1.5rem;
-    list-style-type: disc; /* Use standard bullet points */
-    padding-left: 40px; /* Indent the list */
+    list-style-type: disc; 
+    padding-left: 40px; 
 }
 
 .about-text li {
@@ -519,25 +558,29 @@ a:hover {
 .callout {
     padding: 20px;
     margin: 30px 0;
-    border: 3px solid #eee; /* Default border */
+    border: 3px solid #eee; 
     border-left-width: 15px;
     border-radius: 10px;
     background-color: #f8f8f8;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px;
+    4px rgba(0, 0, 0, 0.1);
 }
 
 .warning-callout {
-    border-left-color: #d9534f; /* Red color for warning */
+    border-color: #00FF00; /* Electric green border */
+    border-left-width: 15px;
+    background-color: #000; /* Black background */
 }
 
 .warning-callout p:first-child {
     margin-top: 0;
     font-weight: bold;
     font-size: 1.2rem;
+    color: #00FF00; /* Electric green text */
 }
 
 .warning-callout p strong {
-    color: #000; /* Highlight strong text */
+    color: #00FF00; /* Electric green text */
     display: block;
     margin-bottom: 10px;
 }
@@ -545,84 +588,127 @@ a:hover {
 .warning-callout p {
     font-size: 1.1rem;
     line-height: 1.7;
+    color: #00FF00; /* Electric green text */
 }
 
-
-
-/* ... rest of your CSS ... */
-/* ... other CSS ... */
-
-/* PROCESS SECTION */
-/* ... other CSS ... */
+/* Media Query for About Section */
+@media (min-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr 2fr; /* Image takes 1/3, text takes 2/3 */
+    }
+}
 
 /* PROCESS SECTION */
 .process {
-    background-color: #f8f8f8;
+    background-color: #e6e6e6; /* Light Gray background */
     padding: 80px 0;
 }
 
-.process-image-container { /* New container for image */
+.process-image-container { 
     border: 2px solid #000;
     border-radius: 10px;
-    padding: 20px; /* Padding inside the box */
+    padding: 20px; 
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-    background-color: #fff; /* White background */
-    display: inline-block; /* To make the container fit the image */
+    background-color: #fff; 
+    display: inline-block; 
 }
 
 .process-image {
     max-width: 100%;
     height: auto;
     display: block;
-    /* Removed margin: 0 auto; because it's handled by the container now */
 }
-
-/* ... rest of your CSS ... */
 
 .process-steps {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 3rem;
     text-align: center;
-    margin-top: 4rem; /* Added margin-top to separate from image */
+    margin-top: 4rem; 
 }
 
 /* Box Styling for Process Steps */
+/* ... other CSS ... */
+
+/* ... other CSS ... */
+
 .process-step-box {
     border: 2px solid #000;
     border-radius: 10px;
     padding: 30px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-    background-color: #fff; /* White background */
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+}
+
+.process-step-box h3 {
+    color: #00FF00; /* Electric green for h3 (stays the same) */
 }
 
 .icon-container {
-    background-color: #000;
-    color: #fff;
+    background-color: #fff; /* White background for icons */
     padding: 20px;
     border-radius: 50%;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 100px; /* Larger icons */
-    height: 100px; /* Larger icons */
+    width: 100px; 
+    height: 100px; 
     margin-bottom: 1.5rem;
     transition: all 0.3s ease;
 }
 
 .icon-container:hover {
-    background-color: #fff;
-    color: #000;
+    background-color: #00FF00; /* Electric green on hover */
     transform: rotate(10deg);
     border: 2px solid #000;
 }
 
 .process-icon {
-    max-width: 50px; /* Larger icons */
-    height: auto;
-    filter: brightness(0) invert(1);
+    display: none; /* Hide the original image */
 }
 
+.icon-container::before {
+    content: "";
+    display: block;
+    width: 50px; /* Adjust to match your icon size */
+    height: 50px; /* Adjust to match your icon size */
+    background-color: #000; /* Black icon color */
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    transition: background-color 0.3s ease; /* Add transition for hover effect */
+}
+
+.icon-container[data-icon="analyse"]::before {
+    -webkit-mask-image: url("images/analyse\ icon.png");
+    mask-image: url("images/analyse\ icon.png");
+}
+
+.icon-container[data-icon="design"]::before {
+    -webkit-mask-image: url("images/design\ icon.png");
+    mask-image: url("images/design\ icon.png");
+}
+
+.icon-container[data-icon="develop"]::before {
+    -webkit-mask-image: url("images/develop\ icon.png");
+    mask-image: url("images/develop\ icon.png");
+}
+
+.icon-container[data-icon="implement"]::before {
+    -webkit-mask-image: url("images/implement\ icon.png");
+    mask-image: url("images/implement\ icon.png");
+}
+
+.icon-container[data-icon="evaluate"]::before {
+    -webkit-mask-image: url("images/evaluate\ icon.png");
+    mask-image: url("images/evaluate\ icon.png");
+}
+
+.icon-container:hover::before {
+    background-color: #000; /* Change to black on hover */
+}
+
+/* ... other CSS ... */
 .step-title {
     margin-bottom: 0.5rem;
     color: #000;
@@ -635,11 +721,9 @@ a:hover {
     line-height: 1.5;
 }
 
-/* ... rest of your CSS ... */
-
 /* CONTACT SECTION */
 .contact {
-    background-color: #f8f8f8;
+    background-color: #e6e6e6; /* Light Gray background */
     padding: 80px 0;
 }
 
@@ -647,8 +731,8 @@ a:hover {
     max-width: 700px;
     margin: 0 auto;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 40px; /* More padding */
-    border-radius: 10px; /* Rounded corners */
+    padding: 40px; 
+    border-radius: 10px; 
     background-color: #fff;
 }
 
@@ -661,42 +745,43 @@ a:hover {
 .form-input,
 .form-textarea {
     width: 100%;
-    padding: 15px; /* More padding */
+    padding: 15px; 
     margin-bottom: 1.5rem;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-family: inherit;
     transition: box-shadow 0.3s ease;
-    font-size: 1rem; /* Larger font size */
+    font-size: 1rem; 
 }
 
 .form-input:focus,
 .form-textarea:focus {
     outline: none;
-    box-shadow: 0 0 5px #000;
+    box-shadow: 0 0 5px #00FF00; /* Electric Green focus */
 }
 
 .form-textarea {
     resize: vertical;
-    min-height: 160px; /* Taller */
+    min-height: 160px; 
 }
 
 .form-button {
     width: 100%;
     background-color: #000;
-    color: #fff;
+    color: #00FF00; /* Electric Green text */
     border: none;
     cursor: pointer;
-    padding: 18px; /* More padding */
-    border-radius: 50px; /* Pill-shaped button */
-    font-weight: 700; /* Bold text */
+    padding: 18px; 
+    border-radius: 50px; 
+    font-weight: 700; 
     transition: all 0.3s ease;
-    text-transform: uppercase; /* Uppercase text */
-    letter-spacing: 1px; /* Add letter spacing */
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
 }
 
 .form-button:hover {
-    background-color: #333;
+    background-color: #00FF00;
+    color: #000; /* Black text */
     transform: scale(1.05);
 }
 
@@ -728,16 +813,15 @@ a:hover {
 }
 
 .social-links a {
-    color: #fff;
-    margin: 0 15px; /* More space */
-    font-size: 1.8rem; /* Larger icons */
+    color: #00FF00; /* Electric Green icons */
+    margin: 0 15px; 
+    font-size: 1.8rem; 
     display: inline-block;
     transition: transform 0.3s ease;
-    /* Removed animation as it was a bit too much */
 }
 
 .social-links a:hover {
-    color: #eee;
+    color: #00cc00;
     transform: translateY(-5px); 
 }
 
@@ -758,49 +842,49 @@ a:hover {
     }
 
     .hero-image-container {
-        height: 350px; /* Adjust height for smaller screens */
+        height: 350px; 
     }
     
     .hero-text-container {
-        padding: 40px 20px; /* Adjust padding for smaller screens */
+        padding: 40px 20px; 
     }
 
     .hero-title {
-        font-size: 2.8rem; /* Reduce title size */
+        font-size: 2.8rem; 
     }
 
     .hero-subtitle {
-        font-size: 1.4rem; /* Reduce subtitle size */
+        font-size: 1.4rem; 
     }
 
     .intro-text {
-        font-size: 1.2rem; /* Reduce font size */
+        font-size: 1.2rem; 
     }
 
     .intro-list li {
-        font-size: 1.2rem; /* Reduce font size */
-        padding-left: 25px; /* Reduce indent */
+        font-size: 1.2rem; 
+        padding-left: 25px; 
     }
 
     .intro-list li::before {
-        font-size: 1.8rem; /* Reduce bullet size */
+        font-size: 1.8rem; 
     }
 
     .about-content {
-        flex-direction: column; /* Stack content vertically */
+        flex-direction: column; 
         text-align: center;
     }
 
     .about-image-container {
         margin-bottom: 2rem;
-        flex: 0 0 300px; /* Increase image size on smaller screens */
+        flex: 0 0 300px; 
     }
 
     .process-steps {
-        grid-template-columns: 1fr; /* Stack process steps vertically */
+        grid-template-columns: 1fr; 
     }
     .intro-content {
-        align-items: center; /* Center align intro text on smaller screens */
+        align-items: center; 
         text-align: center;
     }
 }
@@ -809,11 +893,11 @@ a:hover {
 @media (max-width: 480px) {
 
     .hero-image-container {
-        height: 300px; /* Adjust height for smaller screens */
+        height: 300px; 
     }
     
     .hero-text-container {
-        padding: 30px 15px; /* Adjust padding for smaller screens */
+        padding: 30px 15px; 
     }
 
     .container {
@@ -838,30 +922,30 @@ a:hover {
     }
 
     .hero-title {
-        font-size: 2.2rem; /* Further reduce title size */
+        font-size: 2.2rem; 
     }
 
     .hero-subtitle {
-        font-size: 1.2rem; /* Further reduce subtitle size */
+        font-size: 1.2rem; 
     }
 
     .intro-content {
-        gap: 20px; /* Reduce gap */
+        gap: 20px; 
     }
 
     .intro-text {
-        font-size: 1.1rem; /* Further reduce font size */
+        font-size: 1.1rem; 
         margin-bottom: 10px;
     }
 
     .intro-list li {
-        font-size: 1.1rem; /* Further reduce font size */
+        font-size: 1.1rem; 
         margin-bottom: 10px;
-        padding-left: 20px; /* Further reduce indent */
+        padding-left: 20px; 
     }
 
     .intro-list li::before {
-        font-size: 1.6rem; /* Further reduce bullet size */
+        font-size: 1.6rem; 
     }
 
     .project-title,
@@ -884,57 +968,46 @@ a:hover {
 
     .project-image-container,
     .project {
-        border-radius: 0; /* Remove rounded corners on project cards */
+        border-radius: 0; 
     }
 
     .about-image-container {
-        flex: 0 0 250px; /* Reduce image size */
+        flex: 0 0 250px; 
     }
 }
 @media (max-width: 1260px) and (min-width: 991px) {
     .process-steps {
-        grid-template-columns: repeat(2, 1fr); /* Force 2 columns */
-        justify-items: center; /* Center items in their cells */
+        grid-template-columns: repeat(2, 1fr); 
+        justify-items: center; 
     }
 }
 
-
-
+@media (max-width: 990px) {
+}
 
 @media (max-width: 620px) {
     .process-steps {
-        grid-template-columns: 1fr; /* Force 1 column */
-        justify-items: center; /* Center items in their cells */
+        grid-template-columns: 1fr; 
+        justify-items: center; 
     }
 }
 
 @media (min-width: 621px) and (max-width: 990px) {
     .process-steps {
-        grid-template-columns: repeat(2, 1fr); /* Force 2 columns */
+        grid-template-columns: repeat(2, 1fr); 
     }
 }
 
 @media (max-width: 620px) {
     .process-steps {
-        grid-template-columns: 1fr; /* Force 1 column */
+        grid-template-columns: 1fr; 
     }
 }
 
-/* Media Queries for Intro Section */
-@media (min-width: 768px) {
-    .intro-content {
-        grid-template-columns: 1fr 1fr; /* Two-column layout on larger screens */
-        align-items: center; /* Vertically align items */
-    }
-
-    .intro-callout {
-        grid-column: span 2; /* Make callout span both columns */
-    }
-}
-
-/* Media Query for About Section */
-@media (min-width: 768px) {
-    .about-content {
-        grid-template-columns: 1fr 2fr; /* Image takes 1/3, text takes 2/3 */
-    }
+/* Section Divider Styles */
+.section-divider {
+    width: 100%;
+    height: 3px; 
+    background-image: linear-gradient(to right, #000, #666, #000); 
+    margin: 60px 0; 
 }
