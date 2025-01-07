@@ -253,7 +253,7 @@ body {
 
 /* --- 6. INTRO SECTION --- */
 .intro {
-    padding: 0px 0;
+    padding: 80px 0 80px 0;
     background: linear-gradient(to bottom, #90ee90 0%, #373737 100%); /* Example gradient */
     animation: gradientAnimation 10s ease infinite;
     position: relative; /* For the optional overlay and particles */
