@@ -12,10 +12,13 @@
     9. Process Section
     10. Contact Section
     11. Footer
-    12. Media Queries
+    12. Typography
+    13. Utilities
+    14. Animations
+    15. Media Queries
 */
 
-/* 1. GENERAL STYLES */
+/* --- 1. GENERAL STYLES --- */
 :root {
     --primary-color: #00FF00;
     --primary-color-dark: #00cc00;
@@ -44,76 +47,6 @@ body {
     line-height: 1.7;
     color: var(--text-color);
     background-color: var(--background-color);
-}
-
-h1, .hero-title {
-    font-family: var(--heading-font);
-    font-weight: 800;
-    line-height: 1.2;
-    margin-top: 0;
-}
-
-h2,
-h3,
-.section-title,
-.site-title {
-    font-family: var(--body-font);
-    font-weight: 700;
-    line-height: 1.3;
-    margin-top: 0;
-}
-
-h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-}
-
-h2 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
-    position: relative;
-    display: inline-block;
-    padding-bottom: 10px;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 3rem;
-    color: var(--text-color);
-    padding-bottom: 10px;
-}
-
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 50%;
-    height: 3px;
-    background-color: var(--primary-color);
-    transform: translateX(-50%) scaleX(0);
-    transform-origin: center;
-    transition: transform 0.4s ease-out;
-}
-
-.section-title:hover::after {
-    transform: translateX(-50%) scaleX(1);
-}
-
-h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-}
-
-a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: var(--primary-color-dark);
 }
 
 .container {
@@ -147,7 +80,7 @@ a:hover {
     margin: 60px 0;
 }
 
-/* 2. SKIP LINK */
+/* --- 2. SKIP LINK --- */
 .skip-link {
     position: absolute;
     top: -40px;
@@ -163,20 +96,19 @@ a:hover {
     top: 0;
 }
 
-/* 3. HEADER */
-/* 3. HEADER */
+/* --- 3. HEADER --- */
 .site-header {
     background-color: var(--secondary-color);
     box-shadow: var(--box-shadow);
     position: sticky;
     top: 0;
     z-index: 50;
-    transition: height 0.3s ease, background-color 0.3s ease; /* Add transitions for smooth effect */
+    transition: height 0.3s ease, background-color 0.3s ease;
 }
 
 .site-header.shrunken {
-    height: 60px; /* Adjust this to your desired shrunken header height */
-    background-color: rgba(0, 0, 0, 0.9); /* Optional: Make slightly transparent */
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 .header-content {
@@ -187,8 +119,8 @@ a:hover {
 }
 
 .logo-link {
-    display: flex; /* Add display: flex */
-    align-items: center; /* Add align-items: center */
+    display: flex;
+    align-items: center;
     flex-shrink: 0;
 }
 
@@ -196,47 +128,26 @@ a:hover {
     display: block;
     height: 150px;
     width: auto;
-    transition: height 0.3s ease, transform 0.3s ease; /* Add transition to height */
+    transition: height 0.3s ease, transform 0.3s ease;
 }
 
 .site-header.shrunken .site-logo {
-    height: 50px; /* Adjust this to your desired shrunken logo height */
-}
-
-.site-logo:hover {
-    transform: scale(1.05) rotate(5deg);
+    height: 50px;
 }
 
 .title-subtitle {
     margin-left: 2rem;
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .site-header.shrunken .title-subtitle {
     display: none;
 }
 
-.site-title {
-    font-size: 1.5rem;
-    margin: 0;
-    color: var(--primary-color);
-    font-weight: normal;
-    display: block;
-    white-space: nowrap;
-}
-
-.site-subtitle {
-    font-size: 0.9rem;
-    margin: 0;
-    color: var(--text-color-light);
-    font-weight: normal;
-    display: block;
-    white-space: nowrap;
-}
-
-/* ... Other CSS up to NAVIGATION section ... */
-
-/* 4. NAVIGATION */
+/* --- 4. NAVIGATION --- */
 .menu-toggle {
     display: none; /* Hidden by default on larger screens */
     background: none;
@@ -250,6 +161,7 @@ a:hover {
     display: block; /* Show when header is shrunken */
 }
 
+
 .menu-toggle i {
     font-size: 2rem;
     color: var(--primary-color);
@@ -259,6 +171,7 @@ a:hover {
 .site-nav {
     display: block; /* Visible by default on larger screens */
     position: relative;
+    margin-left: auto; /* Push the nav to the right */
 }
 
 /* Hide navigation when header is shrunken (Corrected Selector) */
@@ -282,20 +195,7 @@ a:hover {
     display: inline-block;
 }
 
-.nav-link:hover {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    transform: translateY(-3px);
-}
-
-.nav-link.active {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-}
-
-/* ... Rest of CSS as before ... */
-
-/* 5. HERO SECTION */
+/* --- 5. HERO SECTION --- */
 .hero {
     background-color: var(--secondary-color);
     color: var(--text-color-light);
@@ -307,7 +207,6 @@ a:hover {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: url("images/hero.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -325,15 +224,20 @@ a:hover {
     z-index: 0;
 }
 
+.hero-image-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
 .hero-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
 }
 
 .hero-text-container {
@@ -348,22 +252,6 @@ a:hover {
     z-index: 1;
 }
 
-.hero-title {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
-    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6);
-    font-weight: 800;
-    line-height: 1.2;
-}
-
-.hero-subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 2.5rem;
-    font-weight: 300;
-    line-height: 1.5;
-    color: var(--text-color-light);
-}
-
 .hero-button {
     padding: 18px 36px;
     border-radius: 50px;
@@ -372,7 +260,7 @@ a:hover {
     letter-spacing: 1px;
 }
 
-/* 6. INTRO SECTION */
+/* --- 6. INTRO SECTION --- */
 .intro {
     background-color: var(--background-color);
     padding: 80px 0;
@@ -395,28 +283,17 @@ a:hover {
     background-color: var(--text-color-light);
 }
 
-.intro-box:nth-child(2) {
+.intro-box-highlight {
     background-color: var(--secondary-color);
     color: var(--text-color-light);
 }
 
-.intro-box:nth-child(2) h3 {
+.intro-box-highlight h3 {
     color: var(--primary-color);
 }
 
-.intro-box:nth-child(2) li::before {
+.intro-box-highlight li::before {
     color: var(--primary-color);
-}
-
-.intro-text {
-    font-size: 1rem;
-    line-height: 1.7;
-    margin-bottom: 20px;
-}
-
-.intro-text strong {
-    font-weight: 700;
-    color: var(--secondary-color);
 }
 
 .intro-box h3 {
@@ -457,11 +334,7 @@ a:hover {
     border: 2px solid var(--primary-color);
 }
 
-.intro-callout strong {
-    color: var(--primary-color);
-}
-
-/* 7. WORK SECTION */
+/* --- 7. WORK SECTION --- */
 .work {
     background-color: var(--background-color);
     padding: 100px 0;
@@ -509,32 +382,12 @@ a:hover {
     transform: scale(1.1);
 }
 
-.project-title {
-    margin-bottom: 0.5rem;
-    color: var(--text-color);
-    font-weight: 700;
-    line-height: 1.3;
-    max-height: 3em;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin-bottom: 0.5rem;
-    font-size: 1.2rem;
-}
-
-
-.project-description {
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    flex-grow: 1;
-}
-
 .project-button {
     margin-top: 0.5rem;
     align-self: center;
 }
 
-/* 8. ABOUT SECTION */
+/* --- 8. ABOUT SECTION --- */
 .about {
     background-color: var(--text-color-light);
     padding: 80px 0;
@@ -557,15 +410,6 @@ a:hover {
     box-shadow: var(--box-shadow);
     overflow: hidden;
     transition: transform 0.3s ease;
-}
-
-
-.about-image-container:hover {
-    transform: scale(1.05) rotate(5deg) translateY(-5px);
-}
-
-.about-image-container:hover .profile-image {
-    transform: scale(1.05) rotate(5deg) translateY(-5px);
 }
 
 .profile-image {
@@ -591,29 +435,10 @@ a:hover {
     margin-bottom: 30px;
 }
 
-.about-text h3 {
-    font-size: 1.5rem;
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-    color: var(--primary-color);
-}
-
-.about-text p {
-    font-size: 1rem;
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-}
-
 .about-text ul {
     margin-bottom: 1.5rem;
     list-style-type: disc;
     padding-left: 40px;
-}
-
-.about-text li {
-    font-size: 1rem;
-    line-height: 1.4;
-    margin-bottom: 0
 }
 
 /* Callout */
@@ -634,7 +459,6 @@ a:hover {
     background-color: var(--secondary-color);
 }
 
-
 .warning-callout p:first-child {
     margin-top: 0;
     font-weight: bold;
@@ -642,19 +466,7 @@ a:hover {
     color: var(--primary-color);
 }
 
-.warning-callout p strong {
-    color: var(--primary-color);
-    display: block;
-    margin-bottom: 10px;
-}
-
-.warning-callout p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: var(--primary-color);
-}
-
-/* 9. PROCESS SECTION */
+/* --- 9. PROCESS SECTION --- */
 .process {
     background-color: var(--background-color);
     padding: 80px 0;
@@ -760,19 +572,7 @@ a:hover {
     background-color: var(--secondary-color);
 }
 
-.step-title {
-    margin-bottom: 0.5rem;
-    color: var(--primary-color);
-    font-size: 1.3rem;
-    font-weight: 700;
-}
-
-.step-description {
-    font-size: 0.9rem;
-    line-height: 1.5;
-}
-
-/* 10. CONTACT SECTION */
+/* --- 10. CONTACT SECTION --- */
 .contact {
     background-color: var(--background-color);
     padding: 80px 0;
@@ -787,6 +587,10 @@ a:hover {
     background-color: var(--text-color-light);
 }
 
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
 .form-label {
     display: block;
     margin-bottom: 0.5rem;
@@ -797,7 +601,6 @@ a:hover {
 .form-textarea {
     width: 100%;
     padding: 15px;
-    margin-bottom: 1.5rem;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-family: inherit;
@@ -826,8 +629,7 @@ a:hover {
 .error-message {
     color: red;
     font-size: 0.9rem;
-    margin-top: -1rem;
-    margin-bottom: 1rem;
+    margin-top: 0.2rem;
 }
 
 .success-message {
@@ -836,7 +638,7 @@ a:hover {
     margin-top: 1rem;
 }
 
-/* 11. FOOTER */
+/* --- 11. FOOTER --- */
 .site-footer {
     background-color: var(--secondary-color);
     color: var(--text-color-light);
@@ -857,86 +659,246 @@ a:hover {
     transition: transform 0.3s ease;
 }
 
+/* --- 12. TYPOGRAPHY --- */
+h1, .hero-title {
+    font-family: var(--heading-font);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-top: 0;
+}
+
+h2,
+h3,
+.section-title,
+.site-title {
+    font-family: var(--body-font);
+    font-weight: 700;
+    line-height: 1.3;
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--text-color);
+    padding-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-color-dark);
+}
+
+.site-title {
+    font-size: 1.5rem;
+    margin: 0;
+    color: var(--primary-color);
+    font-weight: normal;
+    display: block;
+    white-space: nowrap;
+    text-align: right;
+}
+
+.site-subtitle {
+    font-size: 0.9rem;
+    margin: 0;
+    color: var(--text-color-light);
+    font-weight: normal;
+    display: block;
+    white-space: nowrap;
+    text-align: right;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6);
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--text-color-light);
+}
+
+.intro-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.intro-text strong {
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.about-text h3 {
+    font-size: 1.5rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.about-text p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.about-text li {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 0
+}
+
+.warning-callout p strong {
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.warning-callout p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--primary-color);
+}
+
+.project-title {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-weight: 700;
+    line-height: 1.3;
+    max-height: 3em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.project-description {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.step-title {
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.step-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* --- 13. UTILITIES --- */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* --- 14. ANIMATIONS --- */
+.site-logo:hover {
+    transform: scale(1.05) rotate(5deg);
+}
+
+.nav-link:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+.nav-link.active {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.about-image-container:hover {
+    transform: scale(1.05) rotate(5deg) translateY(-5px);
+}
+
+.about-image-container:hover .profile-image {
+    transform: scale(1.05) rotate(5deg) translateY(-5px);
+}
+
 .social-links a:hover {
     color: var(--primary-color-dark);
     transform: translateY(-5px);
 }
 
-/* 12. MEDIA QUERIES */
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 50%;
+    height: 3px;
+    background-color: var(--primary-color);
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    transition: transform 0.4s ease-out;
+}
 
-/* Small tablets and large mobile */
+.section-title:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+/* --- 15. MEDIA QUERIES --- */
+
+/* Mobile Navigation */
 @media (max-width: 768px) {
-    .container {
-        padding: 0 30px;
-    }
-
-    .site-logo {
-        height: 70px;
-    }
-
-    .site-title {
-        font-size: 1.2rem;
-    }
-
-    .site-subtitle {
-        font-size: 0.8rem;
-    }
-
-    .nav-link {
-        padding: 10px 15px;
-    }
-
-    .hero-title {
-        font-size: 2.5rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.2rem;
-    }
-
-    .about-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .about-image-container {
-        margin-bottom: 2rem;
-    }
-
-    .process-steps {
-        grid-template-columns: 1fr;
-    }
-
-    .intro-content {
-        text-align: center;
-    }
-
-    .intro-box, .intro-callout {
-        padding: 20px;
-    }
-
-    .intro-text, .intro-list li {
-        font-size: 0.9rem;
-    }
-
-    .form-input, .form-textarea {
-        padding: 10px;
-        font-size: 0.9rem;
-    }
-
-    .form-button {
-        font-size: 1rem;
-    }
 
     .menu-toggle {
         display: block;
+    }
+
+    .site-nav {
+        display: none;
     }
 
     .site-nav.open {
         display: block;
         width: 100%;
         position: absolute;
-        top: 60px;
+        top: 60px; /* Adjust this to match your shrunken header height */
         left: 0;
         background-color: var(--secondary-color);
     }
@@ -952,21 +914,44 @@ a:hover {
         padding: 15px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
+}
 
-    .header-content {
-        padding: 10px 0;
+/* Intro Section */
+@media (min-width: 768px) {
+    .intro-content {
+        grid-template-columns: 1fr 1fr; 
+        align-items: center; 
     }
 
-    .title-subtitle {
-        margin-left: 0.5rem;
+    .intro-callout {
+        grid-column: span 2; 
     }
+}
 
-    .site-title {
-        font-size: 1.2rem;
+/* About Section */
+@media (min-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr 2fr; /* Image takes 1/3, text takes 2/3 */
     }
+}
 
-    .site-subtitle {
-        font-size: 0.7rem;
+/* Process Section */
+@media (max-width: 620px) {
+    .process-steps {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 621px) and (max-width: 990px) {
+    .process-steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 991px) and (max-width: 1260px) {
+    .process-steps {
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
     }
 }
 
@@ -1047,40 +1032,79 @@ a:hover {
     }
 }
 
-@media (max-width: 1260px) and (min-width: 991px) {
-    .process-steps {
-        grid-template-columns: repeat(2, 1fr);
-        justify-items: center;
-    }
-}
-
-@media (min-width: 621px) and (max-width: 990px) {
-    .process-steps {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 620px) {
-    .process-steps {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Media Queries for Intro Section */
-@media (min-width: 768px) {
-    .intro-content {
-        grid-template-columns: 1fr 1fr; 
-        align-items: center; 
+/* Small tablets and large mobile */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 30px;
     }
 
-    .intro-callout {
-        grid-column: span 2; 
+    .site-logo {
+        height: 70px;
     }
-}
 
-/* Media Query for About Section */
-@media (min-width: 768px) {
+    .site-title {
+        font-size: 1.2rem;
+    }
+
+    .site-subtitle {
+        font-size: 0.8rem;
+    }
+
+    .nav-link {
+        padding: 10px 15px;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem
+    }
+
     .about-content {
-        grid-template-columns: 1fr 2fr; /* Image takes 1/3, text takes 2/3 */
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .about-image-container {
+        margin-bottom: 2rem;
+    }
+
+    .intro-content {
+        text-align: center;
+    }
+
+    .intro-box, .intro-callout {
+        padding: 20px;
+    }
+
+    .intro-text, .intro-list li {
+        font-size: 0.9rem;
+    }
+
+    .form-input, .form-textarea {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .form-button {
+        font-size: 1rem;
+    }
+
+    .header-content {
+        padding: 10px 0;
+    }
+
+    .title-subtitle {
+        margin-left: 0.5rem;
+    }
+
+    .site-title {
+        font-size: 1.2rem;
+    }
+
+    .site-subtitle {
+        font-size: 0.7rem;
     }
 }

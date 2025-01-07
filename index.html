@@ -4,22 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Instructional design portfolio of John Willsdon, showcasing expertise in eLearning, curriculum development, and innovative learning solutions.">
-    <title>John Willsdon - Instructional Design Portfolio</title>
+    <title>Disruptive Learning Design Portfolio</title>
 
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="style.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-</head>
+    </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
@@ -30,7 +24,7 @@
                     <img src="images/Disruptive_transparent-.png" alt="Disruptive Instructional Design" class="site-logo">
                 </a>
                 <div class="title-subtitle">
-                    <h1 class="site-title">John Willsdon - Instructional Designer</h1>
+                    <h1 class="site-title">Disruptive Learning Design</h1>
                     <p class="site-subtitle">Instructional Designers</p>
                 </div>
                 <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">
@@ -50,7 +44,9 @@
 
     <main id="main-content" role="main">
         <section id="hero" class="hero" role="region" aria-labelledby="hero-title">
-            <img src="images/hero.jpeg" alt="A creative workspace showing a desk with a computer, notebook, and other design tools." class="hero-image">
+            <div class="hero-image-container">
+                <img src="images/hero.jpeg" alt="A creative workspace showing a desk with a computer, notebook, and other design tools." class="hero-image">
+            </div>
             <div class="container">
                 <div class="hero-text-container">
                     <h2 id="hero-title" class="hero-title" data-aos="fade-up">Warning: Our Instructional Design Might Break Your Brain.</h2>
@@ -70,7 +66,7 @@
                     <div class="intro-box">
                         <p class="intro-text">Let's be honest: most training is a snoozefest. Employees zone out, learners forget everything, and you're left wondering why you even bothered. I don't do boring. Forget everything you think you know about training. I'm here to shatter expectations and build learning experiences that are so damn engaging, your learners will beg for more. I use a potent cocktail of psychology, technology, and a twisted sense of humor to craft training that's not just effective, it's addictive.</p>
                     </div>
-                    <div class="intro-box">
+                    <div class="intro-box intro-box-highlight">
                         <h3>My methods might be unconventional, but my results are undeniable:
                         </h3>
                         <ul class="intro-list">
@@ -209,39 +205,49 @@
                 <h2 id="contact-title" class="section-title">Contact Us</h2>
                 <p>Have a question? Or keen to discuss how we can work together? Fill out our contacty form, and we will respond within one business day.</p>
                 <form id="contact-form" class="contact-form">
-                    <label for="name" class="form-label">Your Name</label>
-                    <input type="text" id="name" placeholder="Your Name" required class="form-input">
-                    <div class="error-message" id="name-error"></div>
+                    <fieldset>
+                        <legend class="sr-only">Contact Form</legend>
+                        <div class="form-group">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" id="name" placeholder="Your Name" required class="form-input">
+                            <div class="error-message" id="name-error"></div>
+                        </div>
 
-                    <label for="email" class="form-label">Your Email</label>
-                    <input type="email" id="email" placeholder="Your Email" required class="form-input">
-                    <div class="error-message" id="email-error"></div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Your Email</label>
+                            <input type="email" id="email" placeholder="Your Email" required class="form-input">
+                            <div class="error-message" id="email-error"></div>
+                        </div>
 
-                    <label for="message" class="form-label">Your Message</label>
-                    <textarea id="message" placeholder="Your Message" required class="form-textarea"></textarea>
-                    <div class="error-message" id="message-error"></div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Your Message</label>
+                            <textarea id="message" placeholder="Your Message" required class="form-textarea"></textarea>
+                            <div class="error-message" id="message-error"></div>
+                        </div>
 
-                    <button type="submit" class="button form-button">Send Message</button>
-                    <div class="success-message" id="form-success"></div>
+                        <button type="submit" class="button form-button">Send Message</button>
+                    </fieldset>
                 </form>
+                <div class="success-message" id="form-success"></div>
             </div>
         </section>
     </main>
 
     <footer class="site-footer" role="contentinfo">
         <div class="container">
-            <p class="copyright">&copy; 2025 John Willsdon</p>
+            <p class="copyright">&copy<p class="copyright">&copy; 2025 John Willsdon</p>
             <div class="social-links">
                 <a href="YOUR-LINKEDIN-URL" aria-label="LinkedIn Profile" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
     </footer>
-    <script src="script.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init({
             once: true, // Whether animation should happen only once - while scrolling down
         });
     </script>
+    <script src="personal-portfolio.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"></script>
 </body>
 </html>

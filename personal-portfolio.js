@@ -15,16 +15,25 @@ navList.addEventListener('click', (event) => {
 
 // Shrinking Header on Scroll
 const header = document.querySelector('.site-header');
-window.addEventListener('scroll', () => {
-  console.log("Scroll event triggered. ScrollY:", window.scrollY); // Debugging line
-  if (window.scrollY > 0) {
-    header.classList.add('shrunken');
-    console.log("Header should be shrunken"); // Debugging line
-  } else {
-    header.classList.remove('shrunken');
-    console.log("Header should not be shrunken"); // Debugging line
-  }
-});
+
+// Check if the header element exists
+if (header) {
+    console.log("Header element found:", header);
+
+    window.addEventListener('scroll', () => {
+        console.log("Scroll event triggered. ScrollY:", window.scrollY);
+
+        if (window.scrollY > 0) {
+            console.log("Adding 'shrunken' class");
+            header.classList.add('shrunken');
+        } else {
+            console.log("Removing 'shrunken' class");
+            header.classList.remove('shrunken');
+        }
+    });
+} else {
+    console.error("Error: Could not find the header element with class 'site-header'.");
+}
 
 // Mobile Menu Toggle
 const menuToggle = document.querySelector('.menu-toggle');
