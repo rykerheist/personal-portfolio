@@ -3,82 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Instructional Design Portfolio</title>
+    <meta name="description" content="Instructional design portfolio of Your Name, showcasing expertise in eLearning, curriculum development, and innovative learning solutions.">
+    <title>Your Name - Instructional Designer Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <div class="container"> 
-            <h1>Your Name</h1>
-            <h2>Instructional Designer</h2>
-            <nav>
-                <a href="#work" class="nav-link">Work</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#process" class="nav-link">Process</a>
-                <a href="#contact" class="nav-link">Contact</a>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="site-title">Your Name</h1>
+                <p class="site-subtitle">Instructional Designer</p>
+
+                <button class="menu-toggle" aria-label="Open navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <nav class="site-nav">
+                <ul class="nav-list">
+                    <li><a href="#work" class="nav-link">Work</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#process" class="nav-link">Process</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
             </nav>
         </div>
     </header>
 
-    <section id="work">
-        <div class="container">
-            <h2>My Work</h2>
-            <div class="projects">
-                <div class="project">
-                    <img src="images/project1.jpg" alt="Project 1"> 
-                    <h3>Project Title 1</h3>
-                    <p>Short description of Project 1.  Highlight key outcomes and your role.</p>
-                    <a href="#" class="button">View Case Study</a> 
-                </div>
-                </div>
-        </div>
-    </section>
+    <main id="main-content">
+        <section id="hero" class="hero">
+            <div class="container">
+                <h2 class="hero-title">Crafting Engaging Learning Experiences</h2>
+                <p class="hero-subtitle">I design effective and innovative learning solutions that drive results.</p>
+                <a href="#work" class="button hero-button">View My Work</a>
+            </div>
+        </section>
 
-    <section id="about">
+        <section id="work" class="work">
+            <div class="container">
+                <h2 class="section-title">My Work</h2>
+                <div class="projects">
+                    <div class="project">
+                        <div class="project-image-container">
+                            <img src="images/project1.jpg" alt="Project 1" class="project-image">
+                        </div>
+                        <h3 class="project-title">Project Title 1</h3>
+                        <p class="project-description">Short description of Project 1. Highlight key outcomes and your role.</p>
+                        <a href="#" class="button project-button">View Case Study</a>
+                    </div>
+                    </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <div class="about-image-container">
+                        <img src="images/your-photo.jpg" alt="Your Photo" class="profile-image">
+                    </div>
+                    <div class="about-text">
+                        <p>Write a compelling and concise bio here. Focus on your unique skills, experience, and passion for instructional design. Mention your specialization or areas of expertise (e.g., eLearning, mobile learning, gamification).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="process" class="process">
+            <div class="container">
+                <h2 class="section-title">My Design Process</h2>
+                <div class="process-steps">
+                    <div class="step">
+                        <div class="icon-container">
+                            <img src="images/icon-analysis.svg" alt="Analysis Icon" class="process-icon">
+                        </div>
+                        <h3 class="step-title">Analysis</h3>
+                        <p class="step-description">Describe your analysis phase. How do you identify learning needs and objectives?</p>
+                    </div>
+                    </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Contact Me</h2>
+                <form id="contact-form" class="contact-form">
+                    <label for="name" class="form-label">Your Name</label>
+                    <input type="text" id="name" placeholder="Your Name" required class="form-input">
+
+                    <label for="email" class="form-label">Your Email</label>
+                    <input type="email" id="email" placeholder="Your Email" required class="form-input">
+
+                    <label for="message" class="form-label">Your Message</label>
+                    <textarea id="message" placeholder="Your Message" required class="form-textarea"></textarea>
+
+                    <button type="submit" class="button form-button">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
         <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content"> 
-                <img src="images/your-photo.jpg" alt="Your Photo" class="profile-image"> 
-                <p>Write a compelling and concise bio here. Focus on your unique skills, experience, and passion for instructional design. Mention your specialization or areas of expertise (e.g., eLearning, mobile learning, gamification).</p>
+            <p class="copyright">&copy; 2023 Your Name</p>
+            <div class="social-links">
+                <a href="#" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
-    </section>
-
-    <section id="process">
-        <div class="container">
-            <h2>My Design Process</h2>
-            <div class="process-steps">
-                <div class="step">
-                    <img src="images/icon-analysis.svg" alt="Analysis Icon"> 
-                    <h3>Analysis</h3>
-                    <p>Describe your analysis phase. How do you identify learning needs and objectives?</p>
-                </div>
-                </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <form id="contact-form">
-                <input type="text" id="name" placeholder="Your Name" required>
-                <input type="email" id="email" placeholder="Your Email" required>
-                <textarea id="message" placeholder="Your Message" required></textarea>
-                <button type="submit" class="button">Send Message</button>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 Your Name</p> 
-            <div class="social-links">
-                <a href="#"><img src="images/icon-linkedin.svg" alt="LinkedIn"></a> 
-                </div>
-        </div>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
