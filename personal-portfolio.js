@@ -77,18 +77,20 @@ if (menuToggle && siteNav) {
     console.error('Error: menuToggle or siteNav not found');
 }
 
-
+// Form Submission Handling
+const form = document.getElementById('contact-form');
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
 
     if (validateForm()) {
-        // If validation passes, the form will be submitted normally to FormSubmit
-        // No need to manually submit the form here
-        console.log('Form is valid and will be submitted to FormSubmit');
-        // Reset the form after successful submission
+        // If validation passes, submit the form
         form.submit();
+
+        // Reset the form
         form.reset();
+
+        // Display success message
         document.getElementById('form-success').textContent = `Thank you! Your message has been sent.`;
     } else {
         console.error('Form validation failed');
