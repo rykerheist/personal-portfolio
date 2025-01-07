@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -39,17 +40,34 @@
     <main id="main-content">
         <section id="hero" class="hero">
             <div class="container">
-                <h2 class="hero-title">Crafting Engaging Learning Experiences</h2>
-                <p class="hero-subtitle">I design effective and innovative learning solutions that drive results.</p>
-                <a href="#work" class="button hero-button">View My Work</a>
+                <h2 class="hero-title" data-aos="fade-up">Warning: My Instructional Design Might Break Your Brain (In a Good Way).
+                    </h2>
+                <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">I'm not your grandma's instructional designer. I'm here to blow up the boring and create learning experiences that are so effective, they're almost illegal..</p>
+                <a href="#work" class="button hero-button" data-aos="fade-up" data-aos-delay="400">View My Work</a>
             </div>
         </section>
 
-        <section id="work" class="work">
+        <section id="intro" class="intro" data-aos="fade-up" data-aos-duration="800">
+            <div class="container">
+                <div class="intro-content">
+                    <p class="intro-text">Let's be honest: most training is a snoozefest. Employees zone out, learners forget everything, and you're left wondering why you even bothered.  I don't do boring. Forget everything you think you know about training.  I'm here to shatter expectations and build learning experiences that are so damn engaging, your learners will beg for more.  I use a potent cocktail of psychology, technology, and a twisted sense of humor to craft training that's not just effective, it's addictive.</p>
+                    <h3>My methods might be unconventional, but my results are undeniable:
+                    </h3>
+                    <ul class="intro-list">
+                        <li>Increased retention rates that'll make your head spin.</li>
+                        <li>Engagement levels so high, you'll think your learners are hypnotized.</li>
+                        <li>Performance improvements that'll make your competitors cry.                        </li>
+                    </ul>
+                    <p>If you want to give your audience a learning experience they won't be able to ignore, even if they tried, then hire me. If you want them to forget what they're learning before they've learned it, hire someone else.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="work" class="work" data-aos="fade-up" data-aos-duration="800">
             <div class="container">
                 <h2 class="section-title">My Work</h2>
                 <div class="projects">
-                    <div class="project">
+                    <div class="project" data-aos="fade-right" data-aos-delay="200">
                         <div class="project-image-container">
                             <img src="images/project1.jpg" alt="Project 1" class="project-image">
                         </div>
@@ -57,40 +75,77 @@
                         <p class="project-description">Short description of Project 1. Highlight key outcomes and your role.</p>
                         <a href="#" class="button project-button">View Case Study</a>
                     </div>
+                    <div class="project" data-aos="fade-left" data-aos-delay="400">
+                        <div class="project-image-container">
+                            <img src="images/project2.jpg" alt="Project 2" class="project-image">
+                        </div>
+                        <h3 class="project-title">Project Title 2</h3>
+                        <p class="project-description">Short description of Project 2. Highlight key outcomes and your role.</p>
+                        <a href="#" class="button project-button">View Case Study</a>
                     </div>
+                    <div class="project" data-aos="fade-right" data-aos-delay="600">
+                        <div class="project-image-container">
+                            <img src="images/project3.jpg" alt="Project 3" class="project-image">
+                        </div>
+                        <h3 class="project-title">Project Title 3</h3>
+                        <p class="project-description">Short description of Project 3. Highlight key outcomes and your role.</p>
+                        <a href="#" class="button project-button">View Case Study</a>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="about" class="about">
+        <section id="about" class="about" data-aos="fade-up" data-aos-duration="800">
             <div class="container">
                 <h2 class="section-title">About Me</h2>
                 <div class="about-content">
-                    <div class="about-image-container">
+                    <div class="about-image-container" data-aos="fade-right" data-aos-delay="200">
                         <img src="images/your-photo.jpg" alt="Your Photo" class="profile-image">
                     </div>
-                    <div class="about-text">
+                    <div class="about-text" data-aos="fade-left" data-aos-delay="400">
                         <p>Write a compelling and concise bio here. Focus on your unique skills, experience, and passion for instructional design. Mention your specialization or areas of expertise (e.g., eLearning, mobile learning, gamification).</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="process" class="process">
+        <section id="process" class="process" data-aos="fade-up" data-aos-duration="800">
             <div class="container">
                 <h2 class="section-title">My Design Process</h2>
                 <div class="process-steps">
-                    <div class="step">
+                    <div class="step" data-aos="fade-up" data-aos-delay="200">
                         <div class="icon-container">
                             <img src="images/icon-analysis.svg" alt="Analysis Icon" class="process-icon">
                         </div>
                         <h3 class="step-title">Analysis</h3>
                         <p class="step-description">Describe your analysis phase. How do you identify learning needs and objectives?</p>
                     </div>
+                    <div class="step" data-aos="fade-up" data-aos-delay="400">
+                        <div class="icon-container">
+                            <img src="images/icon-design.svg" alt="Design Icon" class="process-icon">
+                        </div>
+                        <h3 class="step-title">Design</h3>
+                        <p class="step-description">Explain your design process. How do you create engaging and effective learning experiences?</p>
                     </div>
+                    <div class="step" data-aos="fade-up" data-aos-delay="600">
+                        <div class="icon-container">
+                            <img src="images/icon-develop.svg" alt="Development Icon" class="process-icon">
+                        </div>
+                        <h3 class="step-title">Develop</h3>
+                        <p class="step-description">Describe your development process. What tools and technologies do you use?</p>
+                    </div>
+                    <div class="step" data-aos="fade-up" data-aos-delay="800">
+                        <div class="icon-container">
+                            <img src="images/icon-evaluate.svg" alt="Evaluation Icon" class="process-icon">
+                        </div>
+                        <h3 class="step-title">Evaluate</h3>
+                        <p class="step-description">Explain your evaluation process. How do you measure the effectiveness of your learning solutions?</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="contact" class="contact">
+        <section id="contact" class="contact" data-aos="fade-up" data-aos-duration="800">
             <div class="container">
                 <h2 class="section-title">Contact Me</h2>
                 <form id="contact-form" class="contact-form">
@@ -118,5 +173,11 @@
         </div>
     </footer>
     <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true, // Whether animation should happen only once - while scrolling down
+        });
+    </script>
 </body>
 </html>
