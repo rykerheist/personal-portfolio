@@ -894,14 +894,15 @@ a:hover {
         padding: 10px; /* Add padding */
     }
 
-    /* Hide the navigation by default on smaller screens */
-    .site-nav {
+    /* Hide the navigation list by default on smaller screens */
+    .nav-list {
         display: none;
     }
 
     /* Style the mobile navigation when it's open */
-    .site-nav.open {
-        display: block;
+    .site-nav.open .nav-list {
+        display: flex; /* Corrected: Display the navigation list when open */
+        flex-direction: column;
         width: 100%;
         position: absolute;
         top: 70px; /* Adjust this to match your shrunken header height */
@@ -961,7 +962,7 @@ a:hover {
         justify-items: center;
     }
 
-    /* New: Center wrapped items on medium screens */
+    /* Center wrapped items on medium screens */
     #processSteps.wrapped {
         justify-content: center;
     }
@@ -988,7 +989,7 @@ a:hover {
         justify-items: center;
     }
 
-    /* New: Center wrapped items on large screens */
+    /* Center wrapped items on large screens */
     #processSteps.wrapped {
         justify-content: center;
     }

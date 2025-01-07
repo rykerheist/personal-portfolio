@@ -35,21 +35,6 @@ if (header) {
     console.error("Error: Could not find the header element with class 'site-header'.");
 }
 
-// Mobile Menu Toggle
-const menuToggle = document.querySelector('.menu-toggle');
-const siteNav = document.querySelector('.site-nav');
-
-// Ensure menuToggle and siteNav are defined before adding the event listener
-if (menuToggle && siteNav) {
-    menuToggle.addEventListener('click', () => {
-        siteNav.classList.toggle('open');
-        const isExpanded = siteNav.classList.contains('open');
-        menuToggle.setAttribute('aria-expanded', isExpanded);
-    });
-} else {
-    console.error('Error: menuToggle or siteNav not found');
-}
-
 // Add/remove 'wrapped' class to process section based on wrapping
 const processSteps = document.getElementById("processSteps");
 
@@ -66,7 +51,7 @@ function handleProcessWrapping() {
   }, 0);
 
   // Check if total width exceeds container width
-  if (totalChildrenWidth > containerWidth) {
+  if (totalChildrenWidth >= containerWidth) {
     processSteps.classList.add("wrapped");
   } else {
     processSteps.classList.remove("wrapped");
@@ -76,6 +61,21 @@ function handleProcessWrapping() {
 // Call initially and on window resize
 handleProcessWrapping();
 window.addEventListener("resize", handleProcessWrapping);
+
+// Mobile Menu Toggle
+const menuToggle = document.querySelector('.menu-toggle');
+const siteNav = document.querySelector('.site-nav');
+
+// Ensure menuToggle and siteNav are defined before adding the event listener
+if (menuToggle && siteNav) {
+    menuToggle.addEventListener('click', () => {
+        siteNav.classList.toggle("open");
+        const isExpanded = siteNav.classList.contains('open');
+        menuToggle.setAttribute('aria-expanded', isExpanded);
+    });
+} else {
+    console.error('Error: menuToggle or siteNav not found');
+}
 
 // Form Submission Handling
 const form = document.getElementById('contact-form');
