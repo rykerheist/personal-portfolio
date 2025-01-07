@@ -16,11 +16,11 @@ navList.addEventListener('click', (event) => {
 // Shrinking Header on Scroll
 const header = document.querySelector('.site-header');
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 0) {
-        header.classList.add('shrunken');
-    } else {
-        header.classList.remove('shrunken');
-    }
+  if (window.scrollY > 0) {
+    header.classList.add('shrunken');
+  } else {
+    header.classList.remove('shrunken');
+  }
 });
 
 // Mobile Menu Toggle
