@@ -933,7 +933,7 @@ a:hover {
         overflow-x: hidden;
     }
 
-    /* Hide title and subtitle on smaller screens */
+    /* Hide title and subtitle on smaller screens - Corrected placement */
     .title-subtitle {
         display: none;
     }

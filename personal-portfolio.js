@@ -35,21 +35,20 @@ if (header) {
     console.error("Error: Could not find the header element with class 'site-header'.");
 }
 
-
-
 // Mobile Menu Toggle
-const menuToggle = document.querySelector(".menu-toggle");
-const siteNav = document.querySelector(".site-nav");
+const menuToggle = document.querySelector('.menu-toggle');
+const siteNav = document.querySelector('.site-nav');
 
-menuToggle.addEventListener("click", () => {
-  siteNav.classList.toggle("open");
-
-  // Update aria-expanded attribute for accessibility
-  const expanded = siteNav.classList.contains("open");
-  menuToggle.setAttribute("aria-expanded", expanded);
-});
-
-// ... (Rest of the JavaScript code) ...
+// Ensure menuToggle and siteNav are defined before adding the event listener
+if (menuToggle && siteNav) {
+    menuToggle.addEventListener('click', () => {
+        siteNav.classList.toggle('open');
+        const isExpanded = siteNav.classList.contains('open');
+        menuToggle.setAttribute('aria-expanded', isExpanded);
+    });
+} else {
+    console.error('Error: menuToggle or siteNav not found');
+}
 
 // Form Submission Handling
 const form = document.getElementById('contact-form');
@@ -133,30 +132,3 @@ function sendEmail(data) {
         }, 1500);
     });
 }
-
-// ... (Other JavaScript code) ...
-
-// ... (Other JavaScript code) ...
-
-// Add/remove 'wrapped' class to process section based on wrapping
-const processSteps = document.getElementById("processSteps");
-
-function handleProcessWrapping() {
-  const processStepsChildren = processSteps.children;
-  const containerWidth = processSteps.offsetWidth;
-  let totalChildrenWidth = 0;
-
-  for (let i = 0; i < processStepsChildren.length; i++) {
-    totalChildrenWidth += processStepsChildren[i].offsetWidth;
-  }
-
-  if (totalChildrenWidth > containerWidth) {
-    processSteps.classList.add("wrapped");
-  } else {
-    processSteps.classList.remove("wrapped");
-  }
-}
-
-// Call initially and on window resize
-handleProcessWrapping();
-window.addEventListener("resize", handleProcessWrapping);
