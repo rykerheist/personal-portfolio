@@ -42,6 +42,13 @@ a:hover {
     color: #005fa3;
 }
 
+.section-divider {
+    width: 100%;
+    height: 5px;
+    background-image: linear-gradient(to right, #000 0%, #666 25%, #fff 50%, #666 75%, #000 100%); /* More stops */
+    margin: 60px 0;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -543,18 +550,50 @@ a:hover {
 
 
 /* ... rest of your CSS ... */
-.process-image {
-    max-width: 100%; /* Image will not exceed its container's width */
-    height: auto;    /* Maintain aspect ratio by automatically adjusting height */
-    display: block;  /* Often helps with responsiveness */
-    margin: 0 auto;  /* Center the image horizontally */
+/* ... other CSS ... */
+
+/* PROCESS SECTION */
+/* ... other CSS ... */
+
+/* PROCESS SECTION */
+.process {
+    background-color: #f8f8f8;
+    padding: 80px 0;
 }
+
+.process-image-container { /* New container for image */
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 20px; /* Padding inside the box */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: #fff; /* White background */
+    display: inline-block; /* To make the container fit the image */
+}
+
+.process-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    /* Removed margin: 0 auto; because it's handled by the container now */
+}
+
+/* ... rest of your CSS ... */
 
 .process-steps {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 3rem;
     text-align: center;
+    margin-top: 4rem; /* Added margin-top to separate from image */
+}
+
+/* Box Styling for Process Steps */
+.process-step-box {
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: #fff; /* White background */
 }
 
 .icon-container {
@@ -587,14 +626,16 @@ a:hover {
 .step-title {
     margin-bottom: 0.5rem;
     color: #000;
-    font-size: 1.3rem; /* Larger font size */
-    font-weight: 700; /* Bold title */
+    font-size: 1.3rem; 
+    font-weight: 700; 
 }
 
 .step-description {
     font-size: 1rem;
     line-height: 1.5;
 }
+
+/* ... rest of your CSS ... */
 
 /* CONTACT SECTION */
 .contact {
@@ -857,11 +898,8 @@ a:hover {
     }
 }
 
-@media (max-width: 990px) {
-    .process-steps {
-        /* Removed width: 95% and margin: 0 auto to prevent overflow */
-    }
-}
+
+
 
 @media (max-width: 620px) {
     .process-steps {
