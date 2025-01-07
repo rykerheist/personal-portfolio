@@ -171,3 +171,10 @@ function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
 }
+
+AOS.init({
+    once: false, // Allow animations to happen every time the element is in view
+    offset: 200, // Offset the animation trigger point by 200 pixels
+    duration: 800, // Set the animation duration to 800 milliseconds
+    easing: 'ease-in-out', // Use a smoother easing function
+});

@@ -205,6 +205,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-height: 120vh;
 }
 
 /* This was the critical fix for the hero image */
