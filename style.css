@@ -880,17 +880,16 @@ a:hover {
 /* --- 15. MEDIA QUERIES --- */
 
 /* Mobile Navigation */
-/* Mobile Navigation */
 @media (max-width: 768px) {
     /* Show the menu toggle on smaller screens */
     .menu-toggle {
         display: block;
     }
 
+    /* Make the menu toggle more visible */
     .menu-toggle i {
         font-size: 2rem; /* Increase icon size */
         color: var(--primary-color); /* Set a more visible color */
-        padding: 5px; /* Add some padding around the icon */
     }
 
     /* Hide the navigation by default on smaller screens */
@@ -932,19 +931,11 @@ a:hover {
         overflow-x: hidden;
     }
 
-    /* Title and Subtitle Text Size */
-    .site-title,
-    .site-subtitle {
+    /* Hide title and subtitle on smaller screens */
+    .title-subtitle {
         display: none;
-        /* Corrected: Hide title and subtitle on smaller screens */
     }
 }
-
-    .site-subtitle {
-        font-size: 0.6rem;
-        /* Adjust size as needed */
-    }
-
 
 /* Intro Section */
 @media (min-width: 769px) {
@@ -978,9 +969,9 @@ a:hover {
     }
 }
 
-@media (min-width: 991px) {
+@media (min-width: 769px) {
     #processSteps {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr); /* Apply 3-column layout */
         justify-items: center;
     }
 
