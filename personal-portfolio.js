@@ -77,6 +77,36 @@ if (menuToggle && siteNav) {
     console.error('Error: menuToggle or siteNav not found');
 }
 
+particlesJS("particles-js", {
+    "particles": {
+        "number": {
+            "value": 80,
+            "density": {
+                "enable": true,
+                "value_area": 800
+            }
+        },
+        "color": {
+            "value": "#ffffff"
+        },
+        "shape": {
+            "type": "circle",
+            "stroke": {
+                "width": 0,
+                "color": "#000000"
+            },
+            "polygon": {
+                "nb_sides": 5
+            }
+        },
+        // ... more particle settings ...
+    },
+    "interactivity": {
+        // ... interactivity settings ...
+    },
+    "retina_detect": true
+});
+
 // Form Submission Handling
 const form = document.getElementById('contact-form');
 
