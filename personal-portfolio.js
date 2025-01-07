@@ -35,29 +35,6 @@ if (header) {
     console.error("Error: Could not find the header element with class 'site-header'.");
 }
 
-// Add/remove 'wrapped' class to process section based on wrapping
-const processSteps = document.getElementById("processSteps");
-
-function handleProcessWrapping() {
-  const processStepsChildren = processSteps.children;
-  const containerWidth = processSteps.offsetWidth;
-  let totalChildrenWidth = 0;
-
-  for (let i = 0; i < processStepsChildren.length; i++) {
-    totalChildrenWidth += processStepsChildren[i].offsetWidth;
-  }
-
-  if (totalChildrenWidth > containerWidth) {
-    processSteps.classList.add("wrapped");
-  } else {
-    processSteps.classList.remove("wrapped");
-  }
-}
-
-// Call initially and on window resize
-handleProcessWrapping();
-window.addEventListener("resize", handleProcessWrapping);
-
 // Mobile Menu Toggle
 const menuToggle = document.querySelector('.menu-toggle');
 const siteNav = document.querySelector('.site-nav');
@@ -72,6 +49,33 @@ if (menuToggle && siteNav) {
 } else {
     console.error('Error: menuToggle or siteNav not found');
 }
+
+// Add/remove 'wrapped' class to process section based on wrapping
+const processSteps = document.getElementById("processSteps");
+
+function handleProcessWrapping() {
+  const processStepsChildren = Array.from(processSteps.children);
+  const containerWidth = processSteps.offsetWidth;
+
+  // Calculate total width of children
+  let totalChildrenWidth = processStepsChildren.reduce((total, child) => {
+    const style = window.getComputedStyle(child);
+    const marginLeft = parseFloat(style.marginLeft);
+    const marginRight = parseFloat(style.marginRight);
+    return total + child.offsetWidth + marginLeft + marginRight;
+  }, 0);
+
+  // Check if total width exceeds container width
+  if (totalChildrenWidth > containerWidth) {
+    processSteps.classList.add("wrapped");
+  } else {
+    processSteps.classList.remove("wrapped");
+  }
+}
+
+// Call initially and on window resize
+handleProcessWrapping();
+window.addEventListener("resize", handleProcessWrapping);
 
 // Form Submission Handling
 const form = document.getElementById('contact-form');

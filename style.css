@@ -961,6 +961,7 @@ a:hover {
         justify-items: center;
     }
 
+    /* New: Center wrapped items on medium screens */
     #processSteps.wrapped {
         justify-content: center;
     }
@@ -987,6 +988,7 @@ a:hover {
         justify-items: center;
     }
 
+    /* New: Center wrapped items on large screens */
     #processSteps.wrapped {
         justify-content: center;
     }
