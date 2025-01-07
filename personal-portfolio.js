@@ -13,28 +13,24 @@ navList.addEventListener('click', (event) => {
     }
 });
 
+// Shrinking Header on Scroll
+const header = document.querySelector('.site-header');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 0) {
+        header.classList.add('shrunken');
+    } else {
+        header.classList.remove('shrunken');
+    }
+});
+
 // Mobile Menu Toggle
 const menuToggle = document.querySelector('.menu-toggle');
 const siteNav = document.querySelector('.site-nav');
 
 menuToggle.addEventListener('click', () => {
     siteNav.classList.toggle('open');
-
-    // Toggle aria-expanded attribute for accessibility
     const isExpanded = siteNav.classList.contains('open');
     menuToggle.setAttribute('aria-expanded', isExpanded);
-
-    // Focus management (accessibility)
-    if (isExpanded) {
-        // Move focus to the first focusable element in the menu
-        const firstNavLink = siteNav.querySelector('.nav-link');
-        if (firstNavLink) {
-            firstNavLink.focus();
-        }
-    } else {
-        // Move focus back to the menu toggle
-        menuToggle.focus();
-    }
 });
 
 // Form Submission Handling
@@ -44,7 +40,6 @@ form.addEventListener('submit', (event) => {
     event.preventDefault();
 
     if (validateForm()) {
-        // Proceed with form submission (using sendEmail function)
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
         const message = document.getElementById('message').value;
@@ -106,15 +101,11 @@ function isValidEmail(email) {
 
 // Placeholder function for sending email (replace with actual implementation)
 function sendEmail(data) {
-    // Simulate sending email (e.g., using EmailJS or AJAX)
     return new Promise((resolve, reject) => {
-        // Replace this with your actual email sending logic
         console.log('Sending email with data:', data);
 
-        // Simulate API call delay
         setTimeout(() => {
-            // Simulate success
-            const success = true; 
+            const success = true;
 
             if (success) {
                 resolve({ status: 'success' });
