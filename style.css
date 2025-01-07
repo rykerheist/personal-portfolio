@@ -822,7 +822,6 @@ a:hover {
     line-height: 1.5;
 }
 
-/* --- 13. UTILITIES --- */
 .sr-only {
     position: absolute;
     width: 1px;
@@ -833,6 +832,11 @@ a:hover {
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border-width: 0;
+}
+
+.full-width {
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* --- 14. ANIMATIONS --- */
@@ -883,17 +887,19 @@ a:hover {
 
 /* --- 15. MEDIA QUERIES --- */
 
-/* Mobile Navigation */
+//* Mobile Navigation */
 @media (max-width: 768px) {
-
+    /* Show the menu toggle on smaller screens */
     .menu-toggle {
         display: block;
     }
 
+    /* Hide the navigation by default on smaller screens */
     .site-nav {
         display: none;
     }
 
+    /* Style the mobile navigation when it's open */
     .site-nav.open {
         display: block;
         width: 100%;
@@ -914,22 +920,28 @@ a:hover {
         padding: 15px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
+
+    /* Ensure title-subtitle does not overlap menu toggle */
+    .title-subtitle {
+        margin-right: 20px;
+        margin-left: 10px;
+    }
 }
 
 /* Intro Section */
-@media (min-width: 768px) {
+@media (min-width: 769px) {
     .intro-content {
-        grid-template-columns: 1fr 1fr; 
-        align-items: center; 
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
     }
 
     .intro-callout {
-        grid-column: span 2; 
+        grid-column: span 2;
     }
 }
 
 /* About Section */
-@media (min-width: 768px) {
+@media (min-width: 769px) {
     .about-content {
         grid-template-columns: 1fr 2fr; /* Image takes 1/3, text takes 2/3 */
     }
@@ -963,14 +975,6 @@ a:hover {
 
     .site-logo {
         height: 60px;
-    }
-
-    .site-title {
-        font-size: 1rem;
-    }
-
-    .site-subtitle {
-        font-size: 0.7rem;
     }
 
     .section-title {
@@ -1042,14 +1046,6 @@ a:hover {
         height: 70px;
     }
 
-    .site-title {
-        font-size: 1.2rem;
-    }
-
-    .site-subtitle {
-        font-size: 0.8rem;
-    }
-
     .nav-link {
         padding: 10px 15px;
     }
@@ -1059,7 +1055,7 @@ a:hover {
     }
 
     .hero-subtitle {
-        font-size: 1.2rem
+        font-size: 1.2rem;
     }
 
     .about-content {
@@ -1075,15 +1071,18 @@ a:hover {
         text-align: center;
     }
 
-    .intro-box, .intro-callout {
+    .intro-box,
+    .intro-callout {
         padding: 20px;
     }
 
-    .intro-text, .intro-list li {
+    .intro-text,
+    .intro-list li {
         font-size: 0.9rem;
     }
 
-    .form-input, .form-textarea {
+    .form-input,
+    .form-textarea {
         padding: 10px;
         font-size: 0.9rem;
     }
@@ -1096,15 +1095,20 @@ a:hover {
         padding: 10px 0;
     }
 
+    /* Ensure title-subtitle does not overlap menu toggle */
     .title-subtitle {
         margin-left: 0.5rem;
     }
 
+    /* Title and Subtitle Text Size */
     .site-title {
-        font-size: 1.2rem;
+        font-size: 1rem;
+        /* Adjust size as needed */
     }
 
     .site-subtitle {
-        font-size: 0.7rem;
+        font-size: 0.6rem;
+        /* Adjust size as needed */
     }
+
 }
