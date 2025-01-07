@@ -69,7 +69,7 @@ const siteNav = document.querySelector('.site-nav');
 // Ensure menuToggle and siteNav are defined before adding the event listener
 if (menuToggle && siteNav) {
     menuToggle.addEventListener('click', () => {
-        siteNav.classList.toggle("open");
+        siteNav.classList.toggle('open');
         const isExpanded = siteNav.classList.contains('open');
         menuToggle.setAttribute('aria-expanded', isExpanded);
     });
@@ -81,19 +81,63 @@ if (menuToggle && siteNav) {
 const form = document.getElementById('contact-form');
 
 form.addEventListener('submit', (event) => {
+    // Prevent the default form submission behavior
     event.preventDefault();
 
+    // Validate the form
     if (validateForm()) {
-        // If validation passes, submit the form
+        // If validation passes, manually submit the form
         form.submit();
 
-        // Reset the form
+        // Reset the form after submission
         form.reset();
 
-        // Display success message
-        document.getElementById('form-success').textContent = `Thank you! Your message has been sent.`;
+        // Display a success message
+        document.getElementById('form-success').textContent = 'Thank you! Your message has been sent.';
     } else {
+        // Handle the case where validation fails
         console.error('Form validation failed');
-        // Handle the case where validation fails, if necessary
+        // Optionally display an error message to the user
     }
 });
+
+// Validation Function
+function validateForm() {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    let isValid = true;
+
+    if (name.trim() === '') {
+        document.getElementById('name-error').textContent = 'Please enter your name.';
+        isValid = false;
+    } else {
+        document.getElementById('name-error').textContent = '';
+    }
+
+    if (email.trim() === '') {
+        document.getElementById('email-error').textContent = 'Please enter your email.';
+        isValid = false;
+    } else if (!isValidEmail(email)) {
+        document.getElementById('email-error').textContent = 'Please enter a valid email address.';
+        isValid = false;
+    } else {
+        document.getElementById('email-error').textContent = '';
+    }
+
+    if (message.trim() === '') {
+        document.getElementById('message-error').textContent = 'Please enter your message.';
+        isValid = false;
+    } else {
+        document.getElementById('message-error').textContent = '';
+    }
+
+    return isValid;
+}
+
+// Helper function to validate email format
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
