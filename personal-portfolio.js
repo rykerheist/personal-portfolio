@@ -77,85 +77,21 @@ if (menuToggle && siteNav) {
     console.error('Error: menuToggle or siteNav not found');
 }
 
-// Form Submission Handling
-const form = document.getElementById('contact-form');
+
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
 
     if (validateForm()) {
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-
-        (async () => {
-            try {
-                const response = await sendEmail({ name, email, message });
-                console.log('Email sent successfully:', response);
-                document.getElementById('form-success').textContent = `Thank you, ${name}! Your message has been sent.`;
-                form.reset();
-            } catch (error) {
-                console.error('Error sending email:', error);
-                alert('There was an error sending your message. Please try again later.');
-            }
-        })();
+        // If validation passes, the form will be submitted normally to FormSubmit
+        // No need to manually submit the form here
+        console.log('Form is valid and will be submitted to FormSubmit');
+        // Reset the form after successful submission
+        form.submit();
+        form.reset();
+        document.getElementById('form-success').textContent = `Thank you! Your message has been sent.`;
+    } else {
+        console.error('Form validation failed');
+        // Handle the case where validation fails, if necessary
     }
 });
-
-// Validation Function
-function validateForm() {
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-
-    let isValid = true;
-
-    if (name.trim() === '') {
-        document.getElementById('name-error').textContent = 'Please enter your name.';
-        isValid = false;
-    } else {
-        document.getElementById('name-error').textContent = '';
-    }
-
-    if (email.trim() === '') {
-        document.getElementById('email-error').textContent = 'Please enter your email.';
-        isValid = false;
-    } else if (!isValidEmail(email)) {
-        document.getElementById('email-error').textContent = 'Please enter a valid email address.';
-        isValid = false;
-    } else {
-        document.getElementById('email-error').textContent = '';
-    }
-
-    if (message.trim() === '') {
-        document.getElementById('message-error').textContent = 'Please enter your message.';
-        isValid = false;
-    } else {
-        document.getElementById('message-error').textContent = '';
-    }
-
-    return isValid;
-}
-
-// Helper function to validate email format
-function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
-
-// Placeholder function for sending email (replace with actual implementation)
-function sendEmail(data) {
-    return new Promise((resolve, reject) => {
-        console.log('Sending email with data:', data);
-
-        setTimeout(() => {
-            const success = true;
-
-            if (success) {
-                resolve({ status: 'success' });
-            } else {
-                reject(new Error('Failed to send email.'));
-            }
-        }, 1500);
-    });
-}
