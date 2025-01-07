@@ -1,15 +1,16 @@
 // Smooth Scrolling for Navigation Links
-const navLinks = document.querySelectorAll('.nav-link');
-navLinks.forEach(link => {
-    link.addEventListener('click', function(event) {
+const navList = document.querySelector('.nav-list');
+
+navList.addEventListener('click', (event) => {
+    if (event.target.classList.contains('nav-link')) {
         event.preventDefault();
-        const targetId = this.getAttribute('href');
+        const targetId = event.target.getAttribute('href');
         const targetElement = document.querySelector(targetId);
 
         if (targetElement) {
             targetElement.scrollIntoView({ behavior: 'smooth' });
         }
-    });
+    }
 });
 
 // Mobile Menu Toggle
@@ -42,12 +43,32 @@ const form = document.getElementById('contact-form');
 form.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    // Get form data 
+    if (validateForm()) {
+        // Proceed with form submission (using sendEmail function)
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        (async () => {
+            try {
+                const response = await sendEmail({ name, email, message });
+                console.log('Email sent successfully:', response);
+                document.getElementById('form-success').textContent = `Thank you, ${name}! Your message has been sent.`;
+                form.reset();
+            } catch (error) {
+                console.error('Error sending email:', error);
+                alert('There was an error sending your message. Please try again later.');
+            }
+        })();
+    }
+});
+
+// Validation Function
+function validateForm() {
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const message = document.getElementById('message').value;
 
-    // Validation
     let isValid = true;
 
     if (name.trim() === '') {
@@ -74,26 +95,10 @@ form.addEventListener('submit', (event) => {
         document.getElementById('message-error').textContent = '';
     }
 
-    if (!isValid) {
-        return;
-    }
+    return isValid;
+}
 
-    // Placeholder for sending email (replace with actual implementation)
-    // Example using a hypothetical sendEmail function (async/await for clarity)
-    (async () => {
-        try {
-            const response = await sendEmail({ name, email, message }); // Assuming sendEmail returns a response
-            console.log('Email sent successfully:', response);
-            document.getElementById('form-success').textContent = `Thank you, ${name}! Your message has been sent.`;
-            form.reset();
-        } catch (error) {
-            console.error('Error sending email:', error);
-            alert('There was an error sending your message. Please try again later.');
-        }
-    })();
-});
-
-// Helper function to validate email format (using a simple regex)
+// Helper function to validate email format
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
@@ -108,14 +113,14 @@ function sendEmail(data) {
 
         // Simulate API call delay
         setTimeout(() => {
-            // Simulate success (replace with actual success/failure logic)
-            const success = true;
+            // Simulate success
+            const success = true; 
 
             if (success) {
-                resolve({ status: 'success' }); // Resolve with a response object
+                resolve({ status: 'success' });
             } else {
                 reject(new Error('Failed to send email.'));
             }
-        }, 1500); // Simulate 1.5-second delay
+        }, 1500);
     });
 }

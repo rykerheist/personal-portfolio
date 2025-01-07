@@ -23,12 +23,13 @@
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <header class="site-header">
+    <header class="site-header" role="banner">
         <div class="container">
             <div class="header-content">
                 <a href="/" class="logo-link">
-                    <img src="images/Disruptive_transparent-.png" alt="Your Company Logo" class="site-logo">
+                    <img src="images/Disruptive_transparent-.png" alt="Disruptive Instructional Design" class="site-logo">
                 </a>
+                <h1 class="site-title">John Willsdon - Instructional Designer</h1>
                 <p class="site-subtitle">Instructional Designers</p>
     
                 <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">
@@ -36,7 +37,7 @@
                 </button>
             </div>
     
-            <nav class="site-nav">
+            <nav class="site-nav" role="navigation">
                 <ul class="nav-list">
                     <li><a href="#work" class="nav-link">Work</a></li>
                     <li><a href="#about" class="nav-link">About</a></li>
@@ -47,14 +48,12 @@
         </div>
     </header>
 
-    <main id="main-content">
-        <section id="hero" class="hero">
-            <div class="hero-image-container">
-                <img src="images/hero.jpeg" alt="A photo representing the theme of the portfolio, such as a creative workspace or engaging learning environment" class="hero-image">
-            </div>
+    <main id="main-content" role="main">
+        <section id="hero" class="hero" role="region" aria-labelledby="hero-title">
+            <img src="images/hero.jpeg" alt="A creative workspace showing a desk with a computer, notebook, and other design tools." class="hero-image">
             <div class="container">
                 <div class="hero-text-container">
-                    <h2 class="hero-title" data-aos="fade-up">Warning: Our Instructional Design Might Break Your Brain.</h2>
+                    <h2 id="hero-title" class="hero-title" data-aos="fade-up">Warning: Our Instructional Design Might Break Your Brain.</h2>
                     <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">We're here to blow up the boring and create learning experiences that are so effective, they're almost illegal.</p>
                     <a href="#work" class="button hero-button" data-aos="fade-up" data-aos-delay="400">View Our Work</a>
                 </div>
@@ -63,13 +62,13 @@
 
         <div class="section-divider"></div>
 
-        <section id="intro" class="intro" data-aos="fade-up" data-aos-duration="800">
+        <section id="intro" class="intro" data-aos="fade-up" data-aos-duration="800" role="region" aria-labelledby="intro-title">
             <div class="container">
-                <h2 class="section-title">Disruptive Learning Design</h2>
+                <h2 id="intro-title" class="section-title">Disruptive Learning Design</h2>
 
                 <div class="intro-content">
                     <div class="intro-box">
-                        <p class="intro-text">Let's be honest: most training is a snoozefest. Employees zone out, learners forget everything, and you're left wondering why you even bothered.  I don't do boring. Forget everything you think you know about training.  I'm here to shatter expectations and build learning experiences that are so damn engaging, your learners will beg for more.  I use a potent cocktail of psychology, technology, and a twisted sense of humor to craft training that's not just effective, it's addictive.</p>
+                        <p class="intro-text">Let's be honest: most training is a snoozefest. Employees zone out, learners forget everything, and you're left wondering why you even bothered. I don't do boring. Forget everything you think you know about training. I'm here to shatter expectations and build learning experiences that are so damn engaging, your learners will beg for more. I use a potent cocktail of psychology, technology, and a twisted sense of humor to craft training that's not just effective, it's addictive.</p>
                     </div>
                     <div class="intro-box">
                         <h3>My methods might be unconventional, but my results are undeniable:
@@ -77,7 +76,7 @@
                         <ul class="intro-list">
                             <li>Increased retention rates that'll make your head spin.</li>
                             <li>Engagement levels so high, you'll think your learners are hypnotized.</li>
-                            <li>Performance improvements that'll make your competitors cry.                        </li>
+                            <li>Performance improvements that'll make your competitors cry. </li>
                         </ul>
                     </div>
                     <div class="intro-callout">
@@ -89,43 +88,43 @@
 
         <div class="section-divider"></div>
 
-        <section id="work" class="work" data-aos="fade-up" data-aos-duration="800">
+        <section id="work" class="work" data-aos="fade-up" data-aos-duration="800" role="region" aria-labelledby="work-title">
             <div class="container">
-                <h2 class="section-title">Our Work</h2>
+                <h2 id="work-title" class="section-title">Our Work</h2>
                 <div class="projects">
-                    <div class="project" data-aos="fade-right" data-aos-delay="200">
+                    <article class="project" data-aos="fade-right" data-aos-delay="200">
                         <div class="project-image-container">
                             <img src="images/project1.jpg" alt="Screenshot of the 'Coaching Skills for Managers' e-learning module" class="project-image">
                         </div>
                         <h3 class="project-title">Coaching Skills for Managers</h3>
                         <p class="project-description">This scenario-based learning module placed this organisation's managers in the coaches seat.</p>
                         <a href="#" class="button project-button">View Case Study</a>
-                    </div>
-                    <div class="project" data-aos="fade-left" data-aos-delay="400">
+                    </article>
+                    <article class="project" data-aos="fade-left" data-aos-delay="400">
                         <div class="project-image-container">
                             <img src="images/project2.jpg" alt="Screenshot of the 'Covert Communication on the Railways' e-learning module" class="project-image">
                         </div>
                         <h3 class="project-title">Covert Communication on the Railways</h3>
                         <p class="project-description">The covert communication methods used on the railways.</p>
                         <a href="#" class="button project-button">View Case Study</a>
-                    </div>
-                    <div class="project" data-aos="fade-right" data-aos-delay="600">
+                    </article>
+                    <article class="project" data-aos="fade-right" data-aos-delay="600">
                         <div class="project-image-container">
                             <img src="images/project3.jpg" alt="Screenshot of the 'Ethical Dilemmas' e-learning module" class="project-image">
                         </div>
                         <h3 class="project-title">Ethical Dilemmas</h3>
                         <p class="project-description">Helping employee to make ethical decisions; a scenario based learning adventure.</p>
                         <a href="#" class="button project-button">View Case Study</a>
-                    </div>
+                    </article>
                 </div>
             </div>
         </section>
 
         <div class="section-divider"></div>
 
-        <section id="about" class="about" data-aos="fade-up" data-aos-duration="800">
+        <section id="about" class="about" data-aos="fade-up" data-aos-duration="800" role="region" aria-labelledby="about-title">
             <div class="container">
-                <h2 class="section-title">About Me</h2>
+                <h2 id="about-title" class="section-title">About Me</h2>
                 <div class="about-content">
                     <div class="about-image-container" data-aos="fade-right" data-aos-delay="200">
                         <img src="images/profile pic.JPG" alt="Profile picture of John Willsdon" class="profile-image">
@@ -147,11 +146,9 @@
                                 <li><strong>I believe that anything is possible:</strong> And that anyone can learn anything with the right material.</li>
                             </ul>
                         </div>
-                        <div class="about-box">
-                            <aside class="callout warning-callout">
-                                <p><strong>Fair warning:</strong> Side effects of working with me may include: increased learner engagement, uncontrollable knowledge retention, spontaneous bursts of creativity, and the sudden urge to overthrow the tyranny of boring training. You've been warned.</p>
-                            </aside>
-                        </div>
+                        <aside class="callout warning-callout">
+                            <p><strong>Fair warning:</strong> Side effects of working with me may include: increased learner engagement, uncontrollable knowledge retention, spontaneous bursts of creativity, and the sudden urge to overthrow the tyranny of boring training. You've been warned.</p>
+                        </aside>
                     </div>
                 </div>
             </div>
@@ -159,9 +156,9 @@
 
         <div class="section-divider"></div>
 
-        <section id="process" class="process" data-aos="fade-up" data-aos-duration="800">
+        <section id="process" class="process" data-aos="fade-up" data-aos-duration="800" role="region" aria-labelledby="process-title">
             <div class="container">
-                <h2 class="section-title">Our Design Process</h2>
+                <h2 id="process-title" class="section-title">Our Design Process</h2>
                 <div class="process-image-container" data-aos="fade-up">
                     <img src="images/ADDIE MODEL.png" alt="ADDIE Model" class="process-image">
                 </div>
@@ -171,7 +168,7 @@
                             <img src="images/analyse icon.png" alt="Analysis Icon" class="process-icon">
                         </div>
                         <h3 class="step-title">Analyse</h3>
-                        <p class="step-description">Let's dissect this beast. We're not just poking around here; we're performing a full-on autopsy of your learning needs.  We'll dig deep into the guts of your organisation, figure out what makes your learners tick (or not tick), and identify the root of your training problems.  No stone unturned, no sacred cow un-tipped. We'll figure out what your learners need, even if they don't know themselves.</p>
+                        <p class="step-description">Let's dissect this beast. We're not just poking around here; we're performing a full-on autopsy of your learning needs. We'll dig deep into the guts of your organisation, figure out what makes your learners tick (or not tick), and identify the root of your training problems. No stone unturned, no sacred cow un-tipped. We'll figure out what your learners need, even if they don't know themselves.</p>
                     </div>
                     <div class="step process-step-box" data-aos="fade-up" data-aos-delay="400">
                         <div class="icon-container" data-icon="design">
@@ -185,21 +182,21 @@
                             <img src="images/develop icon.png" alt="Development Icon" class="process-icon">
                         </div>
                         <h3 class="step-title">Develop</h3>
-                        <p class="step-description">Unleashing the Kraken of creation. We're building your learning experience, and it's going to be a monster (the good kind).  Think interactive simulations that feel more real than reality, videos that'll grab your audience's eyeballs, and content so sharp it could cut glass. This is where our twisted genius comes to life. We're not just building training; we're crafting an experience.</p>
+                        <p class="step-description">Unleashing the Kraken of creation. We're building your learning experience, and it's going to be a monster (the good kind). Think interactive simulations that feel more real than reality, videos that'll grab your audience's eyeballs, and content so sharp it could cut glass. This is where our twisted genius comes to life. We're not just building training; we're crafting an experience.</p>
                     </div>
                     <div class="step process-step-box" data-aos="fade-up" data-aos-delay="800">
                         <div class="icon-container" data-icon="implement">
                             <img src="images/implement icon.png" alt="Implement Icon" class="process-icon">
                         </div>
                         <h3 class="step-title">Implement</h3>
-                        <p class="step-description">Let's shove this thing into the real world and see if it explodes.  Time to release our creation into the wild. We'll roll out your training with the precision of a military operation and the finesse of a... well, you get the idea. We'll set the stage for maximum impact, get everyone fired up, then launch this thing like a rocket. If your audience was unmotivated before, they won't be after.</p>
+                        <p class="step-description">Let's shove this thing into the real world and see if it explodes. Time to release our creation into the wild. We'll roll out your training with the precision of a military operation and the finesse of a... well, you get the idea. We'll set the stage for maximum impact, get everyone fired up, then launch this thing like a rocket. If your audience was unmotivated before, they won't be after.</p>
                     </div>
                     <div class="step process-step-box" data-aos="fade-up" data-aos-delay="800">
                         <div class="icon-container" data-icon="evaluate">
                             <img src="images/evaluate icon.png" alt="Evaluate Icon" class="process-icon">
                         </div>
                         <h3 class="step-title">Evaluate</h3>
-                        <p class="step-description">Did we break your learners' brains... or fix them? Time to find out.  We're not afraid to face the music.  We'll meticulously measure the impact of your training, scrutinize the data like a hawk, and figure out what worked, what didn't, and what we can make even more mind-blowingly awesome next time. We'll see what got them hooked and what we can do to make them never want to leave. The goal is to do better than perfect, we want to blow their expectations out of the water.</p>
+                        <p class="step-description">Did we break your learners' brains... or fix them? Time to find out. We're not afraid to face the music. We'll meticulously measure the impact of your training, scrutinize the data like a hawk, and figure out what worked, what didn't, and what we can make even more mind-blowingly awesome next time. We'll see what got them hooked and what we can do to make them never want to leave. The goal is to do better than perfect, we want to blow their expectations out of the water.</p>
                     </div>
                 </div>
             </div>
@@ -207,9 +204,9 @@
 
         <div class="section-divider"></div>
 
-        <section id="contact" class="contact" data-aos="fade-up" data-aos-duration="800">
+        <section id="contact" class="contact" data-aos="fade-up" data-aos-duration="800" role="region" aria-labelledby="contact-title">
             <div class="container">
-                <h2 class="section-title">Contact Us</h2>
+                <h2 id="contact-title" class="section-title">Contact Us</h2>
                 <p>Have a question? Or keen to discuss how we can work together? Fill out our contacty form, and we will respond within one business day.</p>
                 <form id="contact-form" class="contact-form">
                     <label for="name" class="form-label">Your Name</label>
@@ -231,11 +228,11 @@
         </section>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer" role="contentinfo">
         <div class="container">
             <p class="copyright">&copy; 2025 John Willsdon</p>
             <div class="social-links">
-                <a href="YOUR-LINKEDIN-URL" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                <a href="YOUR-LINKEDIN-URL" aria-label="LinkedIn Profile" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
     </footer>
