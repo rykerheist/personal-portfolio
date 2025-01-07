@@ -9,7 +9,6 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f4f4f4;
-    overflow-x: hidden;
 }
 
 h1, h2, h3 {
@@ -20,14 +19,17 @@ h1, h2, h3 {
 
 h1 {
     font-size: 2.5rem;
+    margin-bottom: 0.5rem; /* Added spacing between headings */
 }
 
 h2 {
     font-size: 2.2rem;
+    margin-bottom: 0.5rem; /* Added spacing between headings */
 }
 
 h3 {
-    font-size: 1.6rem;
+    font-size: 1.8rem; /* Increased from 1.6 to create more visual distinction */
+    margin-bottom: 0.5rem; /* Added spacing between headings */
 }
 
 a {
@@ -55,21 +57,22 @@ a:hover {
     padding-bottom: 10px;
 }
 
+/* Updated Section Title Underline */
 .section-title::after {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 0;
-    width: 100%;
+    left: 0; /* Changed from 50% */
+    width: 100%; /* Changed from 0 */
     height: 3px;
     background-color: #000; /* Black underline */
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s ease-out;
+    transform: scaleX(0); /* Start with 0 width (scaled on X-axis) */
+    transform-origin: center; /* Changed transformation origin to center */
+    transition: transform 0.4s ease-out; /* Animate the transform property */
 }
 
 .section-title:hover::after {
-    transform: scaleX(1);
+    transform: scaleX(1); /* Expand to full width on hover (scaled on X-axis) */
 }
 
 /* SKIP LINK */
@@ -162,9 +165,38 @@ a:hover {
     background-color: #000;
     color: #fff;
     text-align: center;
-    padding: 100px 20px;
-    position: relative;
+    padding: 0px 0px;
+    position: relative; /* Important for absolute positioning of children */
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically using flexbox */
+    align-items: center;     /* Center horizontally using flexbox */
+    min-height: 100vh;       /* Ensure it takes at least full viewport height */
+}
+
+.hero-image-container {
+    width: 100%;
+    height: 100vh; /* Update height */
+    overflow: hidden;
+    position: absolute; 
+    z-index: 0; 
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-text-container {
+    background-color: rgba(0, 0, 0, 0.65); /* Increased opacity for better contrast */
+    color: #fff;
+    padding: 50px 20px;
+    width: 100%;
+    position: relative;
+    z-index: 1;        /* Ensure text is above the image */
 }
 
 .hero::before {
@@ -174,9 +206,9 @@ a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.15) 1px, transparent 1px); /* Subtle particles */
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.2) 1px, transparent 1px); /* Increased particle opacity */
     background-size: 40px 40px; /* Adjust particle size */
-    opacity: 0.8; /* Increase particle visibility */
+    opacity: 0.8; 
     animation: moveParticles 30s linear infinite; /* Slower particle movement */
 }
 
@@ -192,7 +224,7 @@ a:hover {
 .hero-title {
     font-size: 3.8rem; /* Larger, bolder title */
     margin-bottom: 1.5rem;
-    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle text-shadow */
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6); /* Increased text-shadow */
     font-weight: 800; /* Extra bold */
     line-height: 1.2;
 }
@@ -231,8 +263,8 @@ a:hover {
 .intro-content {
     display: flex;
     flex-direction: column; /* Stack content vertically */
-    align-items: center;
-    text-align: center;
+    align-items: flex-start; /* Changed to left-align text */
+    text-align: left; /* Changed to left-align text */
     gap: 30px; /* Increased gap */
 }
 
@@ -282,7 +314,7 @@ a:hover {
 /* WORK SECTION */
 .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Increased minmax value for larger cards */
     gap: 3rem;
 }
 
@@ -321,8 +353,12 @@ a:hover {
 .project-title {
     margin-bottom: 0.5rem;
     color: #000;
-    font-size: 1.4rem; /* Larger font size */
+    font-size: 1.5rem; /* Increased font size */
     font-weight: 700; /* Bold title */
+    line-height: 1.3; /* Added line-height for better readability */
+    max-height: 3em; /* Limit to 2 lines of text */
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .project-description {
@@ -384,9 +420,61 @@ a:hover {
     margin-bottom: 1.5rem;
 }
 
-/* PROCESS SECTION */
-.process {
-    padding: 80px 0;
+.about-text h3 {
+    font-size: 1.5rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    color: #000;
+}
+
+.about-text ul {
+    margin-bottom: 1.5rem;
+    list-style-type: disc; /* Use standard bullet points */
+    padding-left: 40px; /* Indent the list */
+}
+
+.about-text li {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    margin-bottom: 0
+}
+
+/* CALLOUT STYLES */
+.callout {
+    padding: 20px;
+    margin: 30px 0;
+    border: 3px solid #eee; /* Default border */
+    border-left-width: 15px;
+    border-radius: 10px;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.warning-callout {
+    border-left-color: #d9534f; /* Red color for warning */
+}
+
+.warning-callout p:first-child {
+    margin-top: 0;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.warning-callout p strong {
+    color: #000; /* Highlight strong text */
+    display: block;
+    margin-bottom: 10px;
+}
+
+.warning-callout p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+.process-image {
+    max-width: 100%; /* Image will not exceed its container's width */
+    height: auto;    /* Maintain aspect ratio by automatically adjusting height */
+    display: block;  /* Often helps with responsiveness */
+    margin: 0 auto;  /* Center the image horizontally */
 }
 
 .process-steps {
@@ -498,6 +586,20 @@ a:hover {
     transform: scale(1.05);
 }
 
+/* Error and Success Message Styling */
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+}
+
+.success-message {
+    color: green;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
 /* FOOTER */
 .site-footer {
     background-color: #000;
@@ -517,12 +619,12 @@ a:hover {
     font-size: 1.8rem; /* Larger icons */
     display: inline-block;
     transition: transform 0.3s ease;
-    animation: bounce 0.8s infinite alternate;
+    /* Removed animation as it was a bit too much */
 }
 
 .social-links a:hover {
     color: #eee;
-    transform: translateY(-5px); /* Increased bounce height */
+    transform: translateY(-5px); 
 }
 
 /* MEDIA QUERIES */
@@ -539,6 +641,14 @@ a:hover {
 
     .icon-container:hover {
         transform: none;
+    }
+
+    .hero-image-container {
+        height: 350px; /* Adjust height for smaller screens */
+    }
+    
+    .hero-text-container {
+        padding: 40px 20px; /* Adjust padding for smaller screens */
     }
 
     .hero-title {
@@ -569,15 +679,29 @@ a:hover {
 
     .about-image-container {
         margin-bottom: 2rem;
+        flex: 0 0 300px; /* Increase image size on smaller screens */
     }
 
     .process-steps {
         grid-template-columns: 1fr; /* Stack process steps vertically */
     }
+    .intro-content {
+        align-items: center; /* Center align intro text on smaller screens */
+        text-align: center;
+    }
 }
 
 /* Mobile devices */
 @media (max-width: 480px) {
+
+    .hero-image-container {
+        height: 300px; /* Adjust height for smaller screens */
+    }
+    
+    .hero-text-container {
+        padding: 30px 15px; /* Adjust padding for smaller screens */
+    }
+
     .container {
         padding: 0 15px;
     }
@@ -653,141 +777,34 @@ a:hover {
         flex: 0 0 250px; /* Reduce image size */
     }
 }
-
-/* Animation for social icons */
-@keyframes bounce {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(-7px); /* Adjust bounce height */
+@media (max-width: 1260px) and (min-width: 991px) {
+    .process-steps {
+        grid-template-columns: repeat(2, 1fr); /* Force 2 columns */
+        justify-items: center; /* Center items in their cells */
     }
 }
 
-/* HERO SECTION */
-.hero {
-    background-color: #000;
-    color: #fff;
-    text-align: center;
-    padding: 0px 0px; /* Reduce padding to accommodate image */
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column; /* Stack image and text vertically */
-}
-
-.hero-image-container {
-    width: 100%; /* Full width */
-    height: 450px; /* Adjust height as needed */
-    overflow: hidden;
-}
-
-.hero-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Cover the entire container */
-    object-position: center; /* Center the image */
-}
-
-.hero-text-container {
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-    color: #fff;
-    padding: 50px 20px; /* Add padding to the text container */
-    width: 100%; /* Full width */
-    position: relative; /* Position the text container within the hero section */
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.15) 1px, transparent 1px); /* Subtle particles */
-    background-size: 40px 40px; /* Adjust particle size */
-    opacity: 0.8; /* Increase particle visibility */
-    animation: moveParticles 30s linear infinite; /* Slower particle movement */
-}
-
-@keyframes moveParticles {
-    from {
-        background-position: 0 0;
-    }
-    to {
-        background-position: 800px 400px; /* Adjust movement */
+@media (max-width: 990px) {
+    .process-steps {
+        /* Removed width: 95% and margin: 0 auto to prevent overflow */
     }
 }
 
-.hero-title {
-    font-size: 3.8rem; /* Larger, bolder title */
-    margin-bottom: 1.5rem;
-    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle text-shadow */
-    font-weight: 800; /* Extra bold */
-    line-height: 1.2;
-}
-
-.hero-subtitle {
-    font-size: 1.7rem; /* Larger subtitle */
-    margin-bottom: 2.5rem;
-    font-weight: 300; /* Lighter font weight */
-    line-height: 1.5;
-}
-
-.hero-button {
-    background-color: #fff;
-    color: #000;
-    font-weight: 700; /* Bold button text */
-    padding: 18px 36px; /* Larger button */
-    border-radius: 50px; /* Pill-shaped button */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-    text-transform: uppercase; /* Uppercase text */
-    letter-spacing: 1px; /* Add letter spacing */
-}
-
-.hero-button:hover {
-    background-color: #eee;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    transform: translateY(-2px);
-}
-
-/* MEDIA QUERIES */
-
-/* Small tablets and large mobile */
-@media (max-width: 768px) {
-    .hero-image-container {
-        height: 350px; /* Adjust height for smaller screens */
-    }
-    
-    .hero-text-container {
-        padding: 40px 20px; /* Adjust padding for smaller screens */
-    }
-
-    .hero-title {
-        font-size: 2.8rem; /* Reduce title size */
-    }
-
-    .hero-subtitle {
-        font-size: 1.4rem; /* Reduce subtitle size */
+@media (max-width: 620px) {
+    .process-steps {
+        grid-template-columns: 1fr; /* Force 1 column */
+        justify-items: center; /* Center items in their cells */
     }
 }
 
-/* Mobile devices */
-@media (max-width: 480px) {
-    .hero-image-container {
-        height: 300px; /* Adjust height for smaller screens */
+@media (min-width: 621px) and (max-width: 990px) {
+    .process-steps {
+        grid-template-columns: repeat(2, 1fr); /* Force 2 columns */
     }
-    
-    .hero-text-container {
-        padding: 30px 15px; /* Adjust padding for smaller screens */
-    }
+}
 
-    .hero-title {
-        font-size: 2.2rem; /* Further reduce title size */
-    }
-
-    .hero-subtitle {
-        font-size: 1.2rem; /* Further reduce subtitle size */
+@media (max-width: 620px) {
+    .process-steps {
+        grid-template-columns: 1fr; /* Force 1 column */
     }
 }
