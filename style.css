@@ -887,7 +887,7 @@ a:hover {
 
 /* --- 15. MEDIA QUERIES --- */
 
-//* Mobile Navigation */
+/* Mobile Navigation */
 @media (max-width: 768px) {
     /* Show the menu toggle on smaller screens */
     .menu-toggle {
@@ -921,11 +921,17 @@ a:hover {
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    /* Ensure title-subtitle does not overlap menu toggle */
-    .title-subtitle {
-        margin-right: 20px;
-        margin-left: 10px;
+    /* Reduce padding on the container */
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
     }
+
+    /* Prevent horizontal scrollbar */
+    html, body {
+        overflow-x: hidden;
+    }
+
 }
 
 /* Intro Section */
@@ -969,13 +975,6 @@ a:hover {
 
 /* Mobile devices */
 @media (max-width: 480px) {
-    .container {
-        padding: 0 15px;
-    }
-
-    .site-logo {
-        height: 60px;
-    }
 
     .section-title {
         font-size: 1.8rem;
@@ -1038,9 +1037,6 @@ a:hover {
 
 /* Small tablets and large mobile */
 @media (max-width: 768px) {
-    .container {
-        padding: 0 30px;
-    }
 
     .site-logo {
         height: 70px;
@@ -1081,12 +1077,6 @@ a:hover {
         font-size: 0.9rem;
     }
 
-    .form-input,
-    .form-textarea {
-        padding: 10px;
-        font-size: 0.9rem;
-    }
-
     .form-button {
         font-size: 1rem;
     }
@@ -1094,21 +1084,4 @@ a:hover {
     .header-content {
         padding: 10px 0;
     }
-
-    /* Ensure title-subtitle does not overlap menu toggle */
-    .title-subtitle {
-        margin-left: 0.5rem;
-    }
-
-    /* Title and Subtitle Text Size */
-    .site-title {
-        font-size: 1rem;
-        /* Adjust size as needed */
-    }
-
-    .site-subtitle {
-        font-size: 0.6rem;
-        /* Adjust size as needed */
-    }
-
 }
