@@ -874,6 +874,14 @@ a:hover {
         height: 70px;
     }
 
+    .site-title {
+        font-size: 1.2rem;
+    }
+
+    .site-subtitle {
+        font-size: 0.8rem;
+    }
+
     .nav-link {
         padding: 10px 15px;
     }
@@ -920,22 +928,15 @@ a:hover {
         font-size: 1rem;
     }
 
-    /* Show menu toggle on mobile */
     .menu-toggle {
         display: block;
     }
 
-    /* Hide the navigation menu by default on mobile */
-    .site-nav {
-        display: none;
-    }
-
-    /* Style the mobile navigation when it's open */
     .site-nav.open {
         display: block;
         width: 100%;
         position: absolute;
-        top: 60px; /* Adjust to match shrunken header height */
+        top: 60px;
         left: 0;
         background-color: var(--secondary-color);
     }
@@ -956,11 +957,8 @@ a:hover {
         padding: 10px 0;
     }
 
-    /* Force title-subtitle to the left on mobile */
     .title-subtitle {
         margin-left: 0.5rem;
-        text-align: left;
-        align-items: flex-start;
     }
 
     .site-title {
@@ -980,6 +978,14 @@ a:hover {
 
     .site-logo {
         height: 60px;
+    }
+
+    .site-title {
+        font-size: 1rem;
+    }
+
+    .site-subtitle {
+        font-size: 0.7rem;
     }
 
     .section-title {
