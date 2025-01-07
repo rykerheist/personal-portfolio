@@ -204,9 +204,10 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items
+    align-items: center;
 }
 
+/* This was the critical fix for the hero image */
 .hero::before {
     content: '';
     position: absolute;
@@ -214,24 +215,20 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
+    background-image: url("images/hero.jpeg"); /* Set background image here */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     background-color: rgba(0, 0, 0, 0.65);
-    z-index: 0;
+    z-index: -1; /* Ensure image is behind the text */
 }
 
 .hero-image-container {
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
+    display: none;
 }
 
 .hero-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+    display: none;
 }
 
 .hero-text-container {
@@ -443,9 +440,9 @@ body {
     border-left-width: 15px;
     border-radius: var(--border-radius);
     background-color: #f8f8f8;
-    box-shadow: 0 2px;
-    4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Corrected line */
 }
+
 
 .warning-callout {
     border-color: var(--primary-color);
