@@ -127,3 +127,31 @@ function sendEmail(data) {
         }, 1500);
     });
 }
+
+// ... (Other JavaScript code) ...
+
+// Add/remove 'wrapped' class to process section based on wrapping
+const processSteps = document.querySelector(".process-steps");
+
+function handleProcessWrapping() {
+  const processStepsChildren = processSteps.children;
+  if (processStepsChildren.length > 3) {
+    // Check if elements are wrapping
+    const firstItemTop = processStepsChildren[0].offsetTop;
+    const isWrapping = Array.from(processStepsChildren).some(
+      (item) => item.offsetTop > firstItemTop
+    );
+
+    if (isWrapping) {
+      processSteps.classList.add("wrapped");
+    } else {
+      processSteps.classList.remove("wrapped");
+    }
+  } else {
+    processSteps.classList.remove("wrapped"); // Not enough items to wrap
+  }
+}
+
+// Call initially and on window resize
+handleProcessWrapping();
+window.addEventListener("resize", handleProcessWrapping);

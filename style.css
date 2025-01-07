@@ -880,6 +880,7 @@ a:hover {
 /* --- 15. MEDIA QUERIES --- */
 
 /* Mobile Navigation */
+/* Mobile Navigation */
 @media (max-width: 768px) {
     /* Show the menu toggle on smaller screens */
     .menu-toggle {
@@ -920,15 +921,18 @@ a:hover {
     }
 
     /* Prevent horizontal scrollbar */
-    html, body {
+    html,
+    body {
         overflow-x: hidden;
     }
 
     /* Title and Subtitle Text Size */
-    .site-title {
-        font-size: 1rem;
-        /* Adjust size as needed */
+    .site-title,
+    .site-subtitle {
+        display: none;
+        /* Corrected: Hide title and subtitle on smaller screens */
     }
+}
 
     .site-subtitle {
         font-size: 0.6rem;
@@ -972,6 +976,18 @@ a:hover {
     .process-steps {
         grid-template-columns: repeat(3, 1fr);
         justify-items: center;
+    }
+}
+
+@media (min-width: 991px) {
+    .process-steps {
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+    }
+
+    .process-steps.wrapped {
+        justify-content: center;
+        /* New: Center wrapped items */
     }
 }
 
