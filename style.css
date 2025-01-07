@@ -663,3 +663,131 @@ a:hover {
         transform: translateY(-7px); /* Adjust bounce height */
     }
 }
+
+/* HERO SECTION */
+.hero {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 0px 0px; /* Reduce padding to accommodate image */
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* Stack image and text vertically */
+}
+
+.hero-image-container {
+    width: 100%; /* Full width */
+    height: 450px; /* Adjust height as needed */
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire container */
+    object-position: center; /* Center the image */
+}
+
+.hero-text-container {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    color: #fff;
+    padding: 50px 20px; /* Add padding to the text container */
+    width: 100%; /* Full width */
+    position: relative; /* Position the text container within the hero section */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.15) 1px, transparent 1px); /* Subtle particles */
+    background-size: 40px 40px; /* Adjust particle size */
+    opacity: 0.8; /* Increase particle visibility */
+    animation: moveParticles 30s linear infinite; /* Slower particle movement */
+}
+
+@keyframes moveParticles {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 800px 400px; /* Adjust movement */
+    }
+}
+
+.hero-title {
+    font-size: 3.8rem; /* Larger, bolder title */
+    margin-bottom: 1.5rem;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle text-shadow */
+    font-weight: 800; /* Extra bold */
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.7rem; /* Larger subtitle */
+    margin-bottom: 2.5rem;
+    font-weight: 300; /* Lighter font weight */
+    line-height: 1.5;
+}
+
+.hero-button {
+    background-color: #fff;
+    color: #000;
+    font-weight: 700; /* Bold button text */
+    padding: 18px 36px; /* Larger button */
+    border-radius: 50px; /* Pill-shaped button */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 1px; /* Add letter spacing */
+}
+
+.hero-button:hover {
+    background-color: #eee;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+/* MEDIA QUERIES */
+
+/* Small tablets and large mobile */
+@media (max-width: 768px) {
+    .hero-image-container {
+        height: 350px; /* Adjust height for smaller screens */
+    }
+    
+    .hero-text-container {
+        padding: 40px 20px; /* Adjust padding for smaller screens */
+    }
+
+    .hero-title {
+        font-size: 2.8rem; /* Reduce title size */
+    }
+
+    .hero-subtitle {
+        font-size: 1.4rem; /* Reduce subtitle size */
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+    .hero-image-container {
+        height: 300px; /* Adjust height for smaller screens */
+    }
+    
+    .hero-text-container {
+        padding: 30px 15px; /* Adjust padding for smaller screens */
+    }
+
+    .hero-title {
+        font-size: 2.2rem; /* Further reduce title size */
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem; /* Further reduce subtitle size */
+    }
+}
