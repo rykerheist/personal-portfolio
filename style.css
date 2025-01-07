@@ -254,6 +254,8 @@ a:hover {
     transform: translateY(-2px);
 }
 
+/* ... other CSS ... */
+
 /* INTRO SECTION */
 .intro {
     background-color: #f8f8f8;
@@ -261,17 +263,16 @@ a:hover {
 }
 
 .intro-content {
-    display: flex;
-    flex-direction: column; /* Stack content vertically */
-    align-items: flex-start; /* Changed to left-align text */
-    text-align: left; /* Changed to left-align text */
-    gap: 30px; /* Increased gap */
+    display: grid;
+    grid-template-columns: 1fr; /* Default to a single column layout */
+    gap: 40px; /* Increased gap */
+    max-width: 900px; /* Limit content width */
+    margin: 0 auto; /* Center content */
 }
 
 .intro-text {
     font-size: 1.4rem; /* Larger font size */
     line-height: 1.7;
-    max-width: 800px; /* Limit text width */
     margin-bottom: 20px;
 }
 
@@ -290,7 +291,6 @@ a:hover {
 .intro-list {
     list-style-type: none; /* Remove default bullet points */
     padding: 0;
-    max-width: 800px; /* Limit list width */
 }
 
 .intro-list li {
@@ -310,6 +310,34 @@ a:hover {
     color: #000; /* Black bullet */
     line-height: 1;
 }
+
+/* Box Styling for Intro Content */
+.intro-box {
+    border: 2px solid #000; /* Solid black border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 30px; /* Padding inside the box */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    background-color: #fff; /* White background */
+}
+
+/* Callout Styling */
+.intro-callout {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    border-radius: 10px; /* Rounded corners */
+    padding: 30px; /* Padding inside the box */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    font-size: 1.2rem; /* Slightly larger font size */
+    line-height: 1.6;
+}
+
+.intro-callout strong {
+    color: #fff; /* Ensure strong text is also white */
+}
+
+
+
+/* ... rest of your CSS ... */
 
 /* WORK SECTION */
 .projects {
@@ -410,8 +438,49 @@ a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* ... other CSS ... */
+
+/* ABOUT SECTION */
+.about {
+    background-color: #fff;
+    padding: 80px 0;
+}
+
+.about-content {
+    display: grid; /* Use grid layout */
+    grid-template-columns: 1fr; /* Single column by default */
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-image-container {
+    flex: 0 0 350px; /* Larger image */
+    position: relative;
+    border-radius: 50%; /* Make the container circular */
+    overflow: hidden; /* Hide any overflowing image */
+    justify-self: center; /* Center the image in the grid column */
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the container */
+    object-position: center; /* Center the image */
+    display: block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 .about-text {
     flex: 1;
+}
+
+/* Box Styling for About Content */
+.about-box {
+    border: 2px solid #000; /* Solid black border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 30px; /* Padding inside the box */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    background-color: #f8f8f8; /* Light gray background */
 }
 
 .about-text p {
@@ -470,6 +539,10 @@ a:hover {
     font-size: 1.1rem;
     line-height: 1.7;
 }
+
+
+
+/* ... rest of your CSS ... */
 .process-image {
     max-width: 100%; /* Image will not exceed its container's width */
     height: auto;    /* Maintain aspect ratio by automatically adjusting height */
@@ -806,5 +879,24 @@ a:hover {
 @media (max-width: 620px) {
     .process-steps {
         grid-template-columns: 1fr; /* Force 1 column */
+    }
+}
+
+/* Media Queries for Intro Section */
+@media (min-width: 768px) {
+    .intro-content {
+        grid-template-columns: 1fr 1fr; /* Two-column layout on larger screens */
+        align-items: center; /* Vertically align items */
+    }
+
+    .intro-callout {
+        grid-column: span 2; /* Make callout span both columns */
+    }
+}
+
+/* Media Query for About Section */
+@media (min-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr 2fr; /* Image takes 1/3, text takes 2/3 */
     }
 }
