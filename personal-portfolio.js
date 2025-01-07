@@ -16,10 +16,13 @@ navList.addEventListener('click', (event) => {
 // Shrinking Header on Scroll
 const header = document.querySelector('.site-header');
 window.addEventListener('scroll', () => {
+  console.log("Scroll event triggered. ScrollY:", window.scrollY); // Debugging line
   if (window.scrollY > 0) {
     header.classList.add('shrunken');
+    console.log("Header should be shrunken"); // Debugging line
   } else {
     header.classList.remove('shrunken');
+    console.log("Header should not be shrunken"); // Debugging line
   }
 });
 

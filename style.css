@@ -205,10 +205,7 @@ a:hover {
 }
 
 .title-subtitle {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-left: 2rem;
+    margin-left: 1rem;
     flex-grow: 1;
 }
 
@@ -216,7 +213,7 @@ a:hover {
     display: none;
 }
 
-..site-title {
+.site-title {
     font-size: 1.5rem;
     margin: 0;
     color: var(--primary-color);
@@ -233,7 +230,6 @@ a:hover {
     display: block;
     white-space: nowrap;
 }
-
 
 /* 4. NAVIGATION */
 .menu-toggle {
@@ -290,7 +286,8 @@ a:hover {
 
 .nav-link.active {
     background-color: var(--primary-color);
-    color: var
+    color: var(--secondary-color);
+}
 
 /* 5. HERO SECTION */
 .hero {
@@ -621,7 +618,7 @@ a:hover {
     border-left-width: 15px;
     border-radius: var(--border-radius);
     background-color: #f8f8f8;
-    box-shadow: 0 2px; 
+    box-shadow: 0 2px;
     4px rgba(0, 0, 0, 0.1);
 }
 
@@ -729,28 +726,28 @@ a:hover {
 }
 
 .icon-container[data-icon="analyse"]::before {
-    -webkit-mask-image: url("images/analyse\ icon.png");
-    mask-image: url("images/analyse\ icon.png");
+    -webkit-mask-image: url("images/analyse%20icon.png");
+    mask-image: url("images/analyse%20icon.png");
 }
 
 .icon-container[data-icon="design"]::before {
-    -webkit-mask-image: url("images/design\ icon.png");
-    mask-image: url("images/design\ icon.png");
+    -webkit-mask-image: url("images/design%20icon.png");
+    mask-image: url("images/design%20icon.png");
 }
 
 .icon-container[data-icon="develop"]::before {
-    -webkit-mask-image: url("images/develop\ icon.png");
-    mask-image: url("images/develop\ icon.png");
+    -webkit-mask-image: url("images/develop%20icon.png");
+    mask-image: url("images/develop%20icon.png");
 }
 
 .icon-container[data-icon="implement"]::before {
-    -webkit-mask-image: url("images/implement\ icon.png");
-    mask-image: url("images/implement\ icon.png");
+    -webkit-mask-image: url("images/implement%20icon.png");
+    mask-image: url("images/implement%20icon.png");
 }
 
 .icon-container[data-icon="evaluate"]::before {
-    -webkit-mask-image: url("images/evaluate\ icon.png");
-    mask-image: url("images/evaluate\ icon.png");
+    -webkit-mask-image: url("images/evaluate%20icon.png");
+    mask-image: url("images/evaluate%20icon.png");
 }
 
 .icon-container:hover::before {
@@ -871,14 +868,6 @@ a:hover {
         height: 70px;
     }
 
-    .site-title {
-        font-size: 1.2rem;
-    }
-
-    .site-subtitle {
-        font-size: 0.8rem;
-    }
-
     .nav-link {
         padding: 10px 15px;
     }
@@ -925,19 +914,22 @@ a:hover {
         font-size: 1rem;
     }
 
+    /* Show menu toggle on mobile */
     .menu-toggle {
         display: block;
     }
 
-    .site-header.shrunken .site-nav {
+    /* Hide the navigation menu by default on mobile */
+    .site-nav {
         display: none;
     }
 
+    /* Style the mobile navigation when it's open */
     .site-nav.open {
         display: block;
         width: 100%;
         position: absolute;
-        top: 60px;
+        top: 60px; /* Adjust to match shrunken header height */
         left: 0;
         background-color: var(--secondary-color);
     }
@@ -958,8 +950,11 @@ a:hover {
         padding: 10px 0;
     }
 
+    /* Force title-subtitle to the left on mobile */
     .title-subtitle {
         margin-left: 0.5rem;
+        text-align: left;
+        align-items: flex-start;
     }
 
     .site-title {
@@ -979,14 +974,6 @@ a:hover {
 
     .site-logo {
         height: 60px;
-    }
-
-    .site-title {
-        font-size: 1rem;
-    }
-
-    .site-subtitle {
-        font-size: 0.7rem;
     }
 
     .section-title {
@@ -1048,36 +1035,6 @@ a:hover {
     }
 }
 
-/* Small tablets and large mobile */
-@media (max-width: 768px) {
-    /* ... (other media query styles) ... */
-
-    .site-header.shrunken .site-nav {
-        display: none;
-    }
-
-    .site-nav.open {
-        display: block;
-        width: 100%;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        background-color: var(--secondary-color);
-    }
-
-    .nav-list {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .nav-link {
-        width: 100%;
-        text-align: left;
-        padding: 15px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-}
-
 @media (max-width: 1260px) and (min-width: 991px) {
     .process-steps {
         grid-template-columns: repeat(2, 1fr);
@@ -1115,4 +1072,3 @@ a:hover {
         grid-template-columns: 1fr 2fr; /* Image takes 1/3, text takes 2/3 */
     }
 }
-
