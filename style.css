@@ -933,7 +933,7 @@ a:hover {
         overflow-x: hidden;
     }
 
-    /* Hide title and subtitle on smaller screens - Corrected placement */
+    /* Hide title and subtitle on smaller screens */
     .title-subtitle {
         display: none;
     }
@@ -960,6 +960,10 @@ a:hover {
         grid-gap: 3rem;
         justify-items: center;
     }
+
+    #processSteps.wrapped {
+        justify-content: center;
+    }
 }
 
 @media (min-width: 991px) {
@@ -981,6 +985,10 @@ a:hover {
         grid-template-columns: repeat(3, 1fr); /* 3-column layout */
         grid-gap: 3rem;
         justify-items: center;
+    }
+
+    #processSteps.wrapped {
+        justify-content: center;
     }
 }
 
