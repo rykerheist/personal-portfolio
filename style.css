@@ -1049,6 +1049,13 @@ a:hover {
     #processSteps.wrapped {
         justify-content: center;
     }
+
+    #footericon {
+        margin-top: 20px;
+        max-height: 100px;
+        max-width: auto;
+        justify-content: center;
+    }
 }
 
 /* Mobile devices */
@@ -1111,6 +1118,12 @@ a:hover {
     .about-image-container {
         flex: 0 0 250px;
     }
+
+    #footericon {
+        margin-top: 20px;
+        max-height: 80px;
+        max-width: auto;
+    }
 }
 
 /* Small tablets and large mobile */
@@ -1161,5 +1174,11 @@ a:hover {
 
     .header-content {
         padding: 10px 0;
+    }
+
+    #footericon {
+        margin-top: 20px;
+        max-height: 100px;
+        max-width: auto;
     }
 }
