@@ -887,6 +887,12 @@ a:hover {
         display: block;
     }
 
+    .menu-toggle i {
+        font-size: 2rem; /* Increase icon size */
+        color: var(--primary-color); /* Set a more visible color */
+        padding: 5px; /* Add some padding around the icon */
+    }
+
     /* Hide the navigation by default on smaller screens */
     .site-nav {
         display: none;
@@ -938,7 +944,7 @@ a:hover {
         font-size: 0.6rem;
         /* Adjust size as needed */
     }
-}
+
 
 /* Intro Section */
 @media (min-width: 769px) {
@@ -973,21 +979,15 @@ a:hover {
 }
 
 @media (min-width: 991px) {
-    .process-steps {
-        grid-template-columns: repeat(3, 1fr);
-        justify-items: center;
-    }
-}
-
-@media (min-width: 991px) {
-    .process-steps {
+    #processSteps {
         grid-template-columns: repeat(3, 1fr);
         justify-items: center;
     }
 
-    .process-steps.wrapped {
+    #processSteps.wrapped {
+        display: flex;
+        flex-wrap: wrap;
         justify-content: center;
-        /* New: Center wrapped items */
     }
 }
 

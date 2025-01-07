@@ -35,15 +35,21 @@ if (header) {
     console.error("Error: Could not find the header element with class 'site-header'.");
 }
 
-// Mobile Menu Toggle
-const menuToggle = document.querySelector('.menu-toggle');
-const siteNav = document.querySelector('.site-nav');
 
-menuToggle.addEventListener('click', () => {
-    siteNav.classList.toggle('open');
-    const isExpanded = siteNav.classList.contains('open');
-    menuToggle.setAttribute('aria-expanded', isExpanded);
+
+// Mobile Menu Toggle
+const menuToggle = document.querySelector(".menu-toggle");
+const siteNav = document.querySelector(".site-nav");
+
+menuToggle.addEventListener("click", () => {
+  siteNav.classList.toggle("open");
+
+  // Update aria-expanded attribute for accessibility
+  const expanded = siteNav.classList.contains("open");
+  menuToggle.setAttribute("aria-expanded", expanded);
 });
+
+// ... (Rest of the JavaScript code) ...
 
 // Form Submission Handling
 const form = document.getElementById('contact-form');
@@ -130,25 +136,24 @@ function sendEmail(data) {
 
 // ... (Other JavaScript code) ...
 
+// ... (Other JavaScript code) ...
+
 // Add/remove 'wrapped' class to process section based on wrapping
-const processSteps = document.querySelector(".process-steps");
+const processSteps = document.getElementById("processSteps");
 
 function handleProcessWrapping() {
   const processStepsChildren = processSteps.children;
-  if (processStepsChildren.length > 3) {
-    // Check if elements are wrapping
-    const firstItemTop = processStepsChildren[0].offsetTop;
-    const isWrapping = Array.from(processStepsChildren).some(
-      (item) => item.offsetTop > firstItemTop
-    );
+  const containerWidth = processSteps.offsetWidth;
+  let totalChildrenWidth = 0;
 
-    if (isWrapping) {
-      processSteps.classList.add("wrapped");
-    } else {
-      processSteps.classList.remove("wrapped");
-    }
+  for (let i = 0; i < processStepsChildren.length; i++) {
+    totalChildrenWidth += processStepsChildren[i].offsetWidth;
+  }
+
+  if (totalChildrenWidth > containerWidth) {
+    processSteps.classList.add("wrapped");
   } else {
-    processSteps.classList.remove("wrapped"); // Not enough items to wrap
+    processSteps.classList.remove("wrapped");
   }
 }
 
