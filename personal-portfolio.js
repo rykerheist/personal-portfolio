@@ -13,8 +13,12 @@ navList.addEventListener('click', (event) => {
     }
 });
 
+
+
 // Shrinking Header on Scroll
 const header = document.querySelector('.site-header');
+const headerContent = document.querySelector('.header-content'); // Get the header-content element
+
 
 // Check if the header element exists
 if (header) {
@@ -26,9 +30,11 @@ if (header) {
         if (window.scrollY > 0) {
             console.log("Adding 'shrunken' class");
             header.classList.add('shrunken');
+            headerContent.style.zIndex = '60'; // Set z-index when header is shrunken
         } else {
             console.log("Removing 'shrunken' class");
             header.classList.remove('shrunken');
+            headerContent.style.zIndex = '60'; // Maintain z-index when header is not shrunken
         }
     });
 } else {
@@ -178,3 +184,4 @@ AOS.init({
     duration: 800, // Set the animation duration to 800 milliseconds
     easing: 'ease-in-out', // Use a smoother easing function
 });
+

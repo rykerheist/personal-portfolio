@@ -107,7 +107,7 @@ body {
 }
 
 .site-header.shrunken {
-    height: 60px;
+    height: 70px;
     background-color: rgba(0, 0, 0, 0.9);
 }
 
@@ -116,6 +116,11 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 20px 0;
+    position: relative;
+}
+
+.site-header.shrunken .header-content {
+    z-index: 60; /* Maintain z-index when header is shrunken */
 }
 
 .logo-link {
@@ -941,6 +946,12 @@ a:hover {
     /* Show the menu toggle on smaller screens */
     .menu-toggle {
         display: block;
+        z-index: 60;
+    }
+
+    .site-header.shrunken .menu-toggle {
+        display: block; /* Ensure menu toggle is visible when the header is shrunken */
+        z-index: 60; /* Maintain z-index */
     }
 
     /* Make the menu toggle more visible */
