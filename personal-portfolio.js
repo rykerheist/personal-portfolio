@@ -57,25 +57,20 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener("resize", handleProcessWrapping);
 
     // Mobile Menu Toggle
-    const floatingMenuToggleContainer = document.querySelector('.floating-menu-toggle-container');
+    const menuToggle = document.querySelector('.menu-toggle');
     const siteNav = document.querySelector('.site-nav');
-
-    if (floatingMenuToggleContainer && siteNav) {
-        floatingMenuToggleContainer.addEventListener('click', (event) => {
-            // Prevent the click event from propagating to the document
-            event.stopPropagation();
-
-            const menuToggle = floatingMenuToggleContainer.querySelector('.menu-toggle');
+    
+    if (menuToggle && siteNav) {
+        menuToggle.addEventListener('click', () => {
             siteNav.classList.toggle('open');
             const isExpanded = siteNav.classList.contains('open');
             menuToggle.setAttribute('aria-expanded', isExpanded);
         });
-
+    
         // Add an event listener to the document to close the menu when clicking outside
         document.addEventListener('click', (event) => {
-            if (!siteNav.contains(event.target) && !floatingMenuToggleContainer.contains(event.target)) {
+            if (!siteNav.contains(event.target) && !menuToggle.contains(event.target)) {
                 siteNav.classList.remove('open');
-                const menuToggle = floatingMenuToggleContainer.querySelector('.menu-toggle');
                 menuToggle.setAttribute('aria-expanded', false);
             }
         });

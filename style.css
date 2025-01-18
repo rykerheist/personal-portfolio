@@ -1,6 +1,5 @@
 /*
     TABLE OF CONTENTS
-
     1. General Styles
     2. Skip Link
     3. Header
@@ -150,15 +149,14 @@ body {
 
 /* --- 4. NAVIGATION --- */
 .floating-menu-toggle-container {
-    display: none;
     position: fixed;
     top: 20px;
     right: 20px;
     z-index: 75; /* Ensure it's above other elements */
+    display: none;
 }
 
 .menu-toggle {
-    display: none; /* Hidden by default on larger screens */
     background: none;
     border: none;
     cursor: pointer;
@@ -166,26 +164,8 @@ body {
     z-index: 70; /* Ensure the toggle is above other elements */
 }
 
-/* Change menu toggle color when header shrinks */
 .site-header.shrunken .menu-toggle i {
     color: #fff; /* White color */
-}
-
-/* Show and style the floating menu toggle when the header is shrunken */
-.site-header.shrunken .floating-menu-toggle-container {
-    display: block;
-}
-
-.site-header.shrunken .menu-toggle {
-    display: block;
-    position: relative;
-    z-index: 75; /* Ensure it's above other elements */
-}
-
-.site-header.shrunken .menu-toggle i {
-    font-size: 2rem;
-    color: var(--primary-color);
-    transition: color 0.3s ease;
 }
 
 .menu-toggle i {
@@ -964,7 +944,6 @@ a:hover {
 
 .full-width {
     width: 100%;
-    /* REMOVE box-sizing
 }
 
 
@@ -1019,28 +998,11 @@ a:hover {
 
 /* Mobile Navigation */
 @media (max-width: 768px) {
-    /* Show the menu toggle on smaller screens */
-    .menu-toggle {
-        display: block;
-        z-index: 60;
-    }
-
-    /* Ensure menu toggle is visible when header is shrunken and change color to white*/
-    .site-header.shrunken .menu-toggle {
-        display: block; 
-        z-index: 60; 
-        color: #fff
-    }
 
     /* Make the menu toggle more visible */
     .menu-toggle i {
-        font-size: 2rem; /* Increase icon size */
-        padding: 10px; /* Add padding */
-    }
-
-    /* Hide the navigation list by default on smaller screens */
-    .nav-list {
-        display: none;
+        font-size: 2rem;
+        padding: 10px;
     }
 
     /* Style the mobile navigation when it's open */
@@ -1126,7 +1088,13 @@ a:hover {
         grid-template-columns: 1fr;  /* Single column layout */
     }
 
-    /* Center wrapped items on medium screens */
+    #processSteps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 3rem;
+        justify-items: center;
+    }
+    
     #processSteps.wrapped {
         justify-content: center;
     }
