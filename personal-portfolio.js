@@ -37,16 +37,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!processSteps) return;
 
         const processStepsChildren = Array.from(processSteps.children);
-        const containerWidth = processSteps.offsetWidth;
-
-        let totalChildrenWidth = processStepsChildren.reduce((total, child) => {
-            const style = window.getComputedStyle(child);
-            const marginLeft = parseFloat(style.marginLeft);
-            const marginRight = parseFloat(style.marginRight);
-            return total + child.offsetWidth + marginLeft + marginRight;
-        }, 0);
-
-        if (totalChildrenWidth > containerWidth) {
+        const containerRect = processSteps.getBoundingClientRect();
+        const containerWidth = containerRect.width;
+    
+        // Get the top position of the first and last child
+        const firstChildRect = processStepsChildren[0].getBoundingClientRect();
+        const lastChildRect = processStepsChildren[processStepsChildren.length - 1].getBoundingClientRect();
+    
+        // Check if the first and last child are on different lines
+        if (firstChildRect.top !== lastChildRect.top) {
             processSteps.classList.add("wrapped");
         } else {
             processSteps.classList.remove("wrapped");
@@ -59,20 +58,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu Toggle
     const menuToggle = document.querySelector('.menu-toggle');
     const siteNav = document.querySelector('.site-nav');
-    
+
     if (menuToggle && siteNav) {
         menuToggle.addEventListener('click', () => {
             siteNav.classList.toggle('open');
             const isExpanded = siteNav.classList.contains('open');
             menuToggle.setAttribute('aria-expanded', isExpanded);
-        });
-    
-        // Add an event listener to the document to close the menu when clicking outside
-        document.addEventListener('click', (event) => {
-            if (!siteNav.contains(event.target) && !menuToggle.contains(event.target)) {
-                siteNav.classList.remove('open');
-                menuToggle.setAttribute('aria-expanded', false);
-            }
         });
     }
 
