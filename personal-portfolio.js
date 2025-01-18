@@ -55,56 +55,23 @@ document.addEventListener('DOMContentLoaded', () => {
     handleProcessWrapping();
     window.addEventListener("resize", handleProcessWrapping);
 
- // Mobile Menu Toggle
-const menuToggle = document.querySelector('.menu-toggle');
-const siteNav = document.querySelector('.site-nav');
+    // Mobile Menu Toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const siteNav = document.querySelector('.site-nav');
 
-if (menuToggle && siteNav) {
-    menuToggle.addEventListener('click', () => {
-        siteNav.classList.toggle('open');
-        const isExpanded = siteNav.classList.contains('open');
-        menuToggle.setAttribute('aria-expanded', isExpanded);
-    });
+    if (menuToggle && siteNav) {
+        menuToggle.addEventListener('click', () => {
+            siteNav.classList.toggle('open');
+            const isExpanded = siteNav.classList.contains('open');
+            menuToggle.setAttribute('aria-expanded', isExpanded);
+        });
 
-    // Add an event listener to the document to close the menu when clicking outside
-    document.addEventListener('click', (event) => {
-        if (!siteNav.contains(event.target) && !menuToggle.contains(event.target)) {
-            siteNav.classList.remove('open');
-            menuToggle.setAttribute('aria-expanded', false);
-        }
-    });
-}
-
-    // Particles.js Initialization
-    if (document.getElementById("particles-js")) {
-        particlesJS("particles-js", {
-            "particles": {
-                "number": {
-                    "value": 80,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
-                },
-                "color": {
-                    "value": "#ffffff"
-                },
-                "shape": {
-                    "type": "circle",
-                    "stroke": {
-                        "width": 0,
-                        "color": "#000000"
-                    },
-                    "polygon": {
-                        "nb_sides": 5
-                    }
-                }
-                // ... more particle settings ...
-            },
-            "interactivity": {
-                // ... interactivity settings ...
-            },
-            "retina_detect": true
+        // Add an event listener to the document to close the menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!siteNav.contains(event.target) && !menuToggle.contains(event.target)) {
+                siteNav.classList.remove('open');
+                menuToggle.setAttribute('aria-expanded', false);
+            }
         });
     }
 
@@ -195,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
             scale: 1.00,
             scaleMobile: 1.00,
             color: 0x31f213,
-            backgroundColor: 0x737373,
+            backgroundColor: 0x222222,
             points: 14.00,
             spacing: 14.00
         });
@@ -212,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
             scale: 1.00,
             scaleMobile: 1.00,
             color: 0x31f213,
-            backgroundColor: 0x737373,
+            backgroundColor: 0x222222,
             points: 14.00,
             spacing: 14.00
         });
@@ -229,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
             scale: 1.00,
             scaleMobile: 1.00,
             color: 0x31f213,
-            backgroundColor: 0x737373,
+            backgroundColor: 0x222222,
             points: 14.00,
             spacing: 14.00
         });
@@ -246,9 +213,102 @@ document.addEventListener('DOMContentLoaded', () => {
             scale: 1.00,
             scaleMobile: 1.00,
             color: 0x31f213,
-            backgroundColor: 0x737373,
+            backgroundColor: 0x222222,
             points: 14.00,
             spacing: 14.00
         });
     }
 });
+
+tsParticles.load("tsparticles-bg", {
+    fpsLimit: 60,
+    particles: {
+      number: {
+        value: 5,
+        density: {
+          enable: true,
+          area: 800
+        }
+      },
+      color: {
+        value: "#00ff00"
+      },
+      shape: {
+        type: "image",
+        image: {
+            src: "images/Disruptive_icon.png",
+            width: 100,
+            height: 100
+          }
+      },
+      opacity: {
+        value: 1,
+        random: false,
+        animation: {
+          enable: false,
+          speed: 1,
+          minimumValue: 0.1,
+          sync: false
+        }
+      },
+      size: {
+        value: 40,
+        random: { enable: true, minimumValue: 25 },
+        animation: {
+          enable: false,
+          speed: 40,
+          minimumValue: 0.1,
+          sync: false
+        }
+      },
+      move: {
+        enable: true,
+        speed: 7,
+        direction: "none",
+        random: false,
+        straight: false,
+        outModes: {
+          default: "out"
+        },
+        attract: {
+          enable: false,
+          rotateX: 600,
+          rotateY: 1200
+        }
+      }
+    },
+    interactivity: {
+      detectsOn: "canvas",
+      events: {
+        onClick: {
+          enable: true,
+          mode: "repulse"
+        },
+        onHover: {
+          enable: true,
+          mode: "grab"
+        },
+        resize: true
+      },
+      modes: {
+        repulse: {
+          distance: 200,
+          duration: 0.4
+        },
+        grab: {
+          distance: 200,
+          links: {
+            opacity: 1
+          }
+        }
+      }
+    },
+    retina_detect: true,
+    background: {
+      color: "#000000",
+      image: "",
+      position: "50% 50%",
+      repeat: "no-repeat",
+      size: "cover"
+    }
+  });

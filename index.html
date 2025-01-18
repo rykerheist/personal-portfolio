@@ -10,12 +10,13 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.134.0/build/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div id="tsparticles-bg"></div> <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <header class="site-header" role="banner">
         <div class="container">
@@ -53,10 +54,7 @@
             </div>
         </section>
 
-        <div class="section-divider"></div>
-
         <section id="intro" class="intro" data-aos="fade-up" data-aos-duration="800" role="region" aria-labelledby="intro-title">
-            <div id="particles-js"></div>
             <div class="container">
                 <h2 id="intro-title" class="section-title">Disruptive Learning Design</h2>
                 <div class="intro-content">
@@ -87,8 +85,6 @@
                 </div>
             </div>
         </section>
-
-        <div class="section-divider"></div>
 
         <section id="work" class="work" data-aos="fade-up" data-aos-duration="800" role="region" aria-labelledby="work-title">
             <div class="container">
@@ -122,8 +118,6 @@
             </div>
         </section>
 
-        <div class="section-divider"></div>
-
         <section id="about" class="about" data-aos="fade-up" data-aos-duration="800" role="region" aria-labelledby="about-title">
             <div class="container">
                 <h2 id="about-title" class="section-title">About Me</h2>
@@ -151,8 +145,6 @@
                 </div>
             </div>
         </section>
-
-        <div class="section-divider"></div>
 
         <section id="process" class="process" data-aos="fade-up" data-aos-duration="800" role="region" aria-labelledby="process-title">
             <div class="container">
@@ -200,12 +192,10 @@
             </div>
         </section>
 
-        <div class="section-divider"></div>
-
         <section id="contact" class="contact" data-aos="fade-up" data-aos-duration="800" role="region" aria-labelledby="contact-title">
             <div class="container">
                 <h2 id="contact-title" class="section-title">Contact Us</h2>
-                <p>Have a question? Or keen to discuss how we can work together? Fill out our contact form, and we will respond within one business day.</p>
+                <p class="contact-intro">Have a question? Or keen to discuss how we can work together? Fill out our contact form, and we will respond within one business day.</p>
                 <form id="contact-form" class="contact-form" method="POST" action="your-form-handler-url">
                     <fieldset>
                         <legend class="sr-only">Contact Form</legend>
@@ -255,7 +245,7 @@
     </script>
     <script src="personal-portfolio.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.134.0/build/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
 </body>
 </html>
