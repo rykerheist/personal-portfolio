@@ -30,31 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Add/remove 'wrapped' class to process section based on wrapping
-    const processSteps = document.getElementById("processSteps");
-
-    function handleProcessWrapping() {
-        if (!processSteps) return;
-
-        const processStepsChildren = Array.from(processSteps.children);
-        const containerRect = processSteps.getBoundingClientRect();
-        const containerWidth = containerRect.width;
-
-        // Get the top position of the first and last child
-        const firstChildRect = processStepsChildren[0].getBoundingClientRect();
-        const lastChildRect = processStepsChildren[processStepsChildren.length - 1].getBoundingClientRect();
-
-        // Check if the first and last child are on different lines
-        if (firstChildRect.top !== lastChildRect.top) {
-            processSteps.classList.add("wrapped");
-        } else {
-            processSteps.classList.remove("wrapped");
-        }
-    }
-
-    handleProcessWrapping();
-    window.addEventListener("resize", handleProcessWrapping);
-
     // Mobile Menu Toggle
     const menuToggle = document.querySelector('.menu-toggle');
     const siteNav = document.querySelector('.site-nav');
@@ -220,95 +195,120 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-tsParticles.load("tsparticles-bg", {
-    fpsLimit: 60,
-    particles: {
-      number: {
-        value: 5,
-        density: {
-          enable: true,
-          area: 800
-        }
-      },
-      color: {
-        value: "#00ff00"
-      },
-      shape: {
-        type: "image",
-        image: {
-            src: "images/Disruptive_icon.png",
-            width: 100,
-            height: 100
-          }
-      },
-      opacity: {
-        value: 1,
-        random: false,
-        animation: {
-          enable: false,
-          speed: 1,
-          minimumValue: 0.1,
-          sync: false
-        }
-      },
-      size: {
-        value: 40,
-        random: { enable: true, minimumValue: 25 },
-        animation: {
-          enable: false,
-          speed: 40,
-          minimumValue: 0.1,
-          sync: false
-        }
-      },
-      move: {
-        enable: true,
-        speed: 7,
-        direction: "none",
-        random: false,
-        straight: false,
-        outModes: {
-          default: "out"
+particlesJS("particles-js", {
+    "particles": {
+        "number": {
+            "value": 80,
+            "density": {
+                "enable": true,
+                "value_area": 800
+            }
         },
-        attract: {
-          enable: false,
-          rotateX: 600,
-          rotateY: 1200
+        "color": {
+            "value": "#00ff00" // Neon green color
+        },
+        "shape": {
+            "type": "image",
+            "stroke": {
+                "width": 0,
+                "color": "#000000"
+            },
+            "polygon": {
+                "nb_sides": 5
+            },
+            "image": {
+                "src": "images/Disruptive_icon.png", // Path to your logo image
+                "width": 100,
+                "height": 100
+            }
+        },
+        "opacity": {
+            "value": 0.8, // Adjust opacity as needed
+            "random": false,
+            "anim": {
+                "enable": false,
+                "speed": 1,
+                "opacity_min": 0.1,
+                "sync": false
+            }
+        },
+        "size": {
+            "value": 50, // Adjust the size of the logo particles
+            "random": true,
+            "anim": {
+                "enable": false,
+                "speed": 20,
+                "size_min": 0.1,
+                "sync": false
+            }
+        },
+        "line_linked": {
+            "enable": false, // Disable lines between particles
+            "distance": 150,
+            "color": "#ffffff",
+            "opacity": 0.4,
+            "width": 1
+        },
+        "move": {
+            "enable": true,
+            "speed": 6,
+            "direction": "none",
+            "random": false,
+            "straight": false,
+            "out_mode": "out",
+            "bounce": false,
+            "attract": {
+                "enable": false,
+                "rotateX": 600,
+                "rotateY": 1200
+            }
         }
-      }
     },
-    interactivity: {
-      detectsOn: "canvas",
-      events: {
-        onClick: {
-          enable: true,
-          mode: "repulse"
+    "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+            "onhover": {
+                "enable": false, // Disable hover effects
+                "mode": "repulse"
+            },
+            "onclick": {
+                "enable": false, // Disable click effects
+                "mode": "push"
+            },
+            "resize": true
         },
-        onHover: {
-          enable: true,
-          mode: "grab"
-        },
-        resize: true
-      },
-      modes: {
-        repulse: {
-          distance: 200,
-          duration: 0.4
-        },
-        grab: {
-          distance: 200,
-          links: {
-            opacity: 1
-          }
+        "modes": {
+            "grab": {
+                "distance": 400,
+                "line_linked": {
+                    "opacity": 1
+                }
+            },
+            "bubble": {
+                "distance": 400,
+                "size": 40,
+                "duration": 2,
+                "opacity": 8,
+                "speed": 3
+            },
+            "repulse": {
+                "distance": 200,
+                "duration": 0.4
+            },
+            "push": {
+                "particles_nb": 4
+            },
+            "remove": {
+                "particles_nb": 2
+            }
         }
-      }
     },
-    retina_detect: true,
-    background: {
-      color: "#000000",
-      image: "",
-      position: "50% 50%",
-      repeat: "no-repeat",
-      size: "cover"
+    "retina_detect": true,
+    "background": {
+        "color": "#000000", // Set the background to black
+        "image": "",
+        "position": "50% 50%",
+        "repeat": "no-repeat",
+        "size": "cover"
     }
-  });
+});

@@ -142,7 +142,7 @@ body {
 }
 
 .site-header.shrunken .title-subtitle {
-    display: none;
+    display: flex;
 }
 
 /* --- 4. NAVIGATION --- */
@@ -203,6 +203,7 @@ body {
     align-items: center;
     min-height: 80vh;
     background: url("images/hero.jpeg") center/cover no-repeat;
+    z-index: 5;
 }
 
 .hero::before {
@@ -237,6 +238,7 @@ body {
 .intro {
     padding: 80px 0;
     position: relative;
+    z-index: 10;
 }
 
 .intro-content {
@@ -292,10 +294,7 @@ body {
     color: var(--text-color-light);
     clear: both;
     margin-top: 20px;
-}
-
-.intro-box-highlight h3 {
-    color: var(--primary-color);
+    background-color: var(--secondary-color);
 }
 
 .intro-box h3 {
@@ -309,19 +308,6 @@ body {
 .intro-box,
 .intro-callout {
     border: none;
-}
-
-#particles-js {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 0;
-}
-
-.intro-box-highlight {
-    background-color: var(--secondary-color);
 }
 
 .intro-box-highlight .intro-list li::before {
@@ -513,6 +499,7 @@ body {
     box-shadow: var(--box-shadow);
     background-color: var(--text-color-light);
     display: inline-block;
+    margin-bottom: 2rem; /* Added to separate image from boxes */
 }
 
 .process-image {
@@ -522,20 +509,22 @@ body {
 }
 
 .process-steps {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 3rem;
-    text-align: center;
-    margin-top: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
 .process-step-box {
-    border: 2px solid var(--secondary-color);
+    border: 2px solid var(--primary-color);
     border-radius: var(--border-radius);
     padding: 30px;
     box-shadow: var(--box-shadow);
-    background-color: var(--background-color-light);
-    color: var(--text-color);
+    background-color: var(--secondary-color);
+    color: var(--text-color-light);
+    flex: 0 0 calc(33.333% - 2rem); /* Adjust width for different screen sizes */
+    max-width: calc(33.333% - 2rem); /* Adjust width for different screen sizes */
 }
 
 .process-step-box h3 {
@@ -624,7 +613,12 @@ body {
 }
 
 .contact-intro {
-    color: var(--text-color-light);
+    color: var(--text-color);
+    background-color: var(--background-color-light);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
 }
 
 .form-group {
@@ -648,6 +642,7 @@ body {
     transition: box-shadow 0.3s ease;
     font-size: 1rem;
     color: var(--text-color-light);
+    background-color: var(--background-color-light);
 }
 
 .form-input:focus,
@@ -706,6 +701,8 @@ body {
     color: var(--text-color-light);
     padding: 40px 0;
     text-align: center;
+    position: relative;
+    z-index: 10;
 }
 
 .copyright {
@@ -751,20 +748,18 @@ h2 {
     position: relative;
     display: inline-block;
     padding-bottom: 10px;
-    color: var(--text-color-light);
 }
 
 .section-title {
     text-align: center;
     margin-bottom: 3rem;
-    color: var(--text-color);
     padding-bottom: 10px;
+    color: var(--text-color-light);
 }
 
 h3 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
-    color: var(--text-color-light);
 }
 
 a {
@@ -828,7 +823,6 @@ a:hover {
     font-size: 1.5rem;
     line-height: 1.7;
     margin-bottom: 1.5rem;
-    color: var(--primary-color);
 }
 
 .about-text p {
@@ -952,10 +946,11 @@ a:hover {
     width: 100%;
     height: 3px;
     background-color: var(--primary-color);
-    transition: transform 0.4s ease-out;
+    transition: transform 0.4s ease-out, width 0.4s ease-out;
 }
 
 .section-title:hover::after {
+    width: 100%;
     transform: scaleX(1.1);
 }
 
@@ -966,6 +961,9 @@ a:hover {
 @media (max-width: 768px) {
     .menu-toggle {
         display: block; /* Show the toggle on smaller screens */
+        position: fixed;
+        top: 20px;
+        right: 20px;
     }
 
     /* Make the menu toggle more visible */
@@ -1058,17 +1056,19 @@ a:hover {
     }
 
     .process-steps {
-        grid-gap: 3rem;
-        justify-items: center;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .process-step-box {
+        flex: 0 0 calc(50% - 2rem);
+        max-width: calc(50% - 2rem);
     }
 
     /* Intro Section - Stack image and text boxes vertically */
     .intro-box-wrapper {
         flex-direction: column;
-    }
-
-    #processSteps.wrapped {
-        justify-content: center;
     }
 }
 
@@ -1113,11 +1113,6 @@ a:hover {
         grid-template-columns: repeat(3, 1fr); /* 3-column layout */
         grid-gap: 3rem;
         justify-items: center;
-    }
-
-    /* Center wrapped items on large screens */
-    #processSteps.wrapped {
-        justify-content: center;
     }
 
     #footericon {
@@ -1251,4 +1246,60 @@ a:hover {
         max-height: 100px;
         max-width: auto;
     }
+}
+
+.vanta-bg {
+    position: relative;
+    z-index: 10;
+}
+
+.vanta-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+
+#tsparticles-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure it stays behind all other content */
+}
+
+
+.process-step-box {
+    border: 2px solid var(--primary-color); /* White border */
+    background-color: var(--secondary-color); /* Black background */
+    color: var(--text-color-light); /* White text */
+    padding: 30px;
+    box-shadow: var(--box-shadow);
+}
+
+.process-step-box .icon-container {
+    background-color: var(--text-color-light); /* White background for icon container */
+}
+
+.process-step-box .icon-container::before {
+    background-color: var(--secondary-color); /* Black icon */
+}
+
+.process-step-box h3 {
+    color: var(--text-color-light); /* White heading */
+}
+
+.process-step-box .step-description {
+    color: var(--text-color-light); /* White text */
+}
+
+.process-steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
 }
