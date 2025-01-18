@@ -1,5 +1,6 @@
 /*
     TABLE OF CONTENTS
+
     1. General Styles
     2. Skip Link
     3. Header
@@ -149,10 +150,6 @@ body {
 
 /* --- 4. NAVIGATION --- */
 .floating-menu-toggle-container {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 75; /* Ensure it's above other elements */
     display: none;
 }
 
@@ -165,7 +162,7 @@ body {
 }
 
 .site-header.shrunken .menu-toggle i {
-    color: #fff; /* White color */
+    color: #fff !important; /* White color */
 }
 
 .menu-toggle i {
@@ -964,7 +961,7 @@ a:hover {
 }
 
 .about-image-container:hover {
-    transform: scale(1.05) rotate(5deg) translateY(-5px);
+    transform: scale(1.05) rotate(5deg) translateY(-55px);
 }
 
 .about-image-container:hover .profile-image {
@@ -993,11 +990,30 @@ a:hover {
     transform: translateX(-50%) scaleX(1);
 }
 
+/* Grow animation for line under section headings */
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0%;
+    width: 0;
+    height: 3px;
+    background-color: var(--primary-color);
+    transition: width 0.4s ease-out; /* Transition on width */
+}
+
+.section-title:hover::after {
+    width: 100%; /* Grow to full width on hover */
+}
+
 
 /* --- 15. MEDIA QUERIES --- */
 
 /* Mobile Navigation */
 @media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Show the toggle on smaller screens */
+    }
 
     /* Make the menu toggle more visible */
     .menu-toggle i {
@@ -1285,5 +1301,3 @@ a:hover {
         max-width: auto;
     }
 }
-
-/* trying to fix */

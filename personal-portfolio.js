@@ -37,16 +37,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!processSteps) return;
 
         const processStepsChildren = Array.from(processSteps.children);
-        const containerWidth = processSteps.offsetWidth;
+        const containerRect = processSteps.getBoundingClientRect();
+        const containerWidth = containerRect.width;
 
-        let totalChildrenWidth = processStepsChildren.reduce((total, child) => {
-            const style = window.getComputedStyle(child);
-            const marginLeft = parseFloat(style.marginLeft);
-            const marginRight = parseFloat(style.marginRight);
-            return total + child.offsetWidth + marginLeft + marginRight;
-        }, 0);
+        // Get the top position of the first and last child
+        const firstChildRect = processStepsChildren[0].getBoundingClientRect();
+        const lastChildRect = processStepsChildren[processStepsChildren.length - 1].getBoundingClientRect();
 
-        if (totalChildrenWidth > containerWidth) {
+        // Check if the first and last child are on different lines
+        if (firstChildRect.top !== lastChildRect.top) {
             processSteps.classList.add("wrapped");
         } else {
             processSteps.classList.remove("wrapped");
@@ -56,25 +55,25 @@ document.addEventListener('DOMContentLoaded', () => {
     handleProcessWrapping();
     window.addEventListener("resize", handleProcessWrapping);
 
-    // Mobile Menu Toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const siteNav = document.querySelector('.site-nav');
-    
-    if (menuToggle && siteNav) {
-        menuToggle.addEventListener('click', () => {
-            siteNav.classList.toggle('open');
-            const isExpanded = siteNav.classList.contains('open');
-            menuToggle.setAttribute('aria-expanded', isExpanded);
-        });
-    
-        // Add an event listener to the document to close the menu when clicking outside
-        document.addEventListener('click', (event) => {
-            if (!siteNav.contains(event.target) && !menuToggle.contains(event.target)) {
-                siteNav.classList.remove('open');
-                menuToggle.setAttribute('aria-expanded', false);
-            }
-        });
-    }
+ // Mobile Menu Toggle
+const menuToggle = document.querySelector('.menu-toggle');
+const siteNav = document.querySelector('.site-nav');
+
+if (menuToggle && siteNav) {
+    menuToggle.addEventListener('click', () => {
+        siteNav.classList.toggle('open');
+        const isExpanded = siteNav.classList.contains('open');
+        menuToggle.setAttribute('aria-expanded', isExpanded);
+    });
+
+    // Add an event listener to the document to close the menu when clicking outside
+    document.addEventListener('click', (event) => {
+        if (!siteNav.contains(event.target) && !menuToggle.contains(event.target)) {
+            siteNav.classList.remove('open');
+            menuToggle.setAttribute('aria-expanded', false);
+        }
+    });
+}
 
     // Particles.js Initialization
     if (document.getElementById("particles-js")) {
@@ -176,4 +175,80 @@ document.addEventListener('DOMContentLoaded', () => {
         duration: 800,
         easing: 'ease-in-out',
     });
+});
+
+// Vanta.js Initialization
+document.addEventListener('DOMContentLoaded', () => {
+    const workSection = document.getElementById('work');
+    const aboutSection = document.getElementById('about');
+    const processSection = document.getElementById('process');
+    const contactSection = document.getElementById('contact');
+
+    if (workSection) {
+        VANTA.NET({
+            el: "#work",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x31f213,
+            backgroundColor: 0x737373,
+            points: 14.00,
+            spacing: 14.00
+        });
+    }
+
+    if (aboutSection) {
+        VANTA.NET({
+            el: "#about",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x31f213,
+            backgroundColor: 0x737373,
+            points: 14.00,
+            spacing: 14.00
+        });
+    }
+
+    if (processSection) {
+        VANTA.NET({
+            el: "#process",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x31f213,
+            backgroundColor: 0x737373,
+            points: 14.00,
+            spacing: 14.00
+        });
+    }
+
+    if (contactSection) {
+        VANTA.NET({
+            el: "#contact",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x31f213,
+            backgroundColor: 0x737373,
+            points: 14.00,
+            spacing: 14.00
+        });
+    }
 });
