@@ -149,6 +149,14 @@ body {
 }
 
 /* --- 4. NAVIGATION --- */
+.floating-menu-toggle-container {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 75; /* Ensure it's above other elements */
+}
+
 .menu-toggle {
     display: none; /* Hidden by default on larger screens */
     background: none;
@@ -163,8 +171,21 @@ body {
     color: #fff; /* White color */
 }
 
+/* Show and style the floating menu toggle when the header is shrunken */
+.site-header.shrunken .floating-menu-toggle-container {
+    display: block;
+}
+
 .site-header.shrunken .menu-toggle {
-    display: block; /* Show when header is shrunken */
+    display: block;
+    position: relative;
+    z-index: 75; /* Ensure it's above other elements */
+}
+
+.site-header.shrunken .menu-toggle i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
 }
 
 .menu-toggle i {
@@ -320,7 +341,6 @@ body {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    /* Removed width: 100%; */
 }
 
 .intro-box-highlight {
@@ -657,7 +677,7 @@ body {
     box-shadow: var(--box-shadow);
     padding: 40px;
     border-radius: var(--border-radius);
-    background-color: var(--text-color-light);
+    background-color: var(--secondary-color);
 }
 
 .form-group {
@@ -668,6 +688,7 @@ body {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: bold;
+    color: var(--primary-color);
 }
 
 .form-input,
@@ -679,6 +700,7 @@ body {
     font-family: inherit;
     transition: box-shadow 0.3s ease;
     font-size: 1rem;
+    color: var(--text-color-light);
 }
 
 .form-input:focus,
@@ -942,7 +964,7 @@ a:hover {
 
 .full-width {
     width: 100%;
-    /* REMOVE box-sizing: border-box; */
+    /* REMOVE box-sizing
 }
 
 
@@ -1013,7 +1035,6 @@ a:hover {
     /* Make the menu toggle more visible */
     .menu-toggle i {
         font-size: 2rem; /* Increase icon size */
-        color: var(--primary-color); /* Set a more visible color */
         padding: 10px; /* Add padding */
     }
 
@@ -1105,13 +1126,6 @@ a:hover {
         grid-template-columns: 1fr;  /* Single column layout */
     }
 
-    #processSteps {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* 2-column layout */
-        grid-gap: 3rem;
-        justify-items: center;
-    }
-
     /* Center wrapped items on medium screens */
     #processSteps.wrapped {
         justify-content: center;
@@ -1173,7 +1187,7 @@ a:hover {
 
     #footericon {
         margin-top: 20px;
-        max-height: 100px;
+        max-height: 150px;
         max-width: auto;
         justify-content: center;
     }

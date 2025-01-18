@@ -19,20 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Shrinking Header on Scroll
     const header = document.querySelector('.site-header');
-    const headerContent = document.querySelector('.header-content');
 
     if (header) {
         window.addEventListener('scroll', () => {
             if (window.scrollY > 0) {
                 header.classList.add('shrunken');
-                if (headerContent) {
-                    headerContent.style.zIndex = '60';
-                }
             } else {
                 header.classList.remove('shrunken');
-                if (headerContent) {
-                    headerContent.style.zIndex = ''; // Reset to default
-                }
             }
         });
     }
@@ -64,14 +57,27 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener("resize", handleProcessWrapping);
 
     // Mobile Menu Toggle
-    const menuToggle = document.querySelector('.menu-toggle');
+    const floatingMenuToggleContainer = document.querySelector('.floating-menu-toggle-container');
     const siteNav = document.querySelector('.site-nav');
 
-    if (menuToggle && siteNav) {
-        menuToggle.addEventListener('click', () => {
+    if (floatingMenuToggleContainer && siteNav) {
+        floatingMenuToggleContainer.addEventListener('click', (event) => {
+            // Prevent the click event from propagating to the document
+            event.stopPropagation();
+
+            const menuToggle = floatingMenuToggleContainer.querySelector('.menu-toggle');
             siteNav.classList.toggle('open');
             const isExpanded = siteNav.classList.contains('open');
             menuToggle.setAttribute('aria-expanded', isExpanded);
+        });
+
+        // Add an event listener to the document to close the menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!siteNav.contains(event.target) && !floatingMenuToggleContainer.contains(event.target)) {
+                siteNav.classList.remove('open');
+                const menuToggle = floatingMenuToggleContainer.querySelector('.menu-toggle');
+                menuToggle.setAttribute('aria-expanded', false);
+            }
         });
     }
 

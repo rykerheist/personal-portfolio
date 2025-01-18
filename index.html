@@ -25,9 +25,6 @@
                     <h1 class="site-title">Disruptive Learning Design</h1>
                     <p class="site-subtitle">Instructional Designers</p>
                 </div>
-                <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">
-                    <i class="fas fa-bars"></i>
-                </button>
             </div>
             <nav class="site-nav" role="navigation">
                 <ul class="nav-list">
@@ -39,6 +36,12 @@
             </nav>
         </div>
     </header>
+
+    <div class="floating-menu-toggle-container">
+        <button class="menu-toggle floating-menu-toggle" aria-label="Open navigation" aria-expanded="false">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
 
     <main id="main-content" role="main">
         <section id="hero" class="hero full-width" role="region" aria-labelledby="hero-title">
@@ -132,9 +135,9 @@
                     <div class="about-text" data-aos="fade-left" data-aos-delay="400">
                         <div class="about-box">
                             <p>Hi, I'm John Willsdon, founder of Disruptive Learning Design. I'm an instructional designer, facilitator, and a firm believer that learning shouldn't feel like a soul-crushing chore.</p>
-                            <p>Let's be honest, we've all been there: clicking through endless slides of mind-numbing training content, feeling our will to live slowly ebb away 🫥. It's like being trapped in a digital purgatory, where the "Next" button is the only glimmer of hope. I've felt that pain, that existential dread of another pointless training module. And I decided I wasn't going to take it anymore. I made it my life's work to rescue learners from this digital abyss and inject some much-needed life back into learning.</p>
-                            <p>While other instructional designers were busy colour-coding their sticky notes and alphabetising their font collections 💅, I was in the trenches, figuring out how to create experiences that people actually enjoyed and that demonstrably improved their skills. I've spent years honing my craft, experimenting with unconventional techniques (like that time I used a blindfolded, trust-building exercise to help a team overcome communication barriers and achieve a seemingly impossible goal, the office bully even became a team player!) and pushing the boundaries of what's possible in the world of learning.</p>
-                            <p>I'm a student of human behavior, both in life and academia, which means I can not only tell you why your $800,000, 3-day leadership offsite failed to move the needle on any of your performance metrics but also back it up with scientific evidence. My expertise in human motivation means I can help you see that sales training alone won't lead to double-digit profit growth, and then show you what will work. (Hint: it involves understanding what drives intrinsic motivation in your people.) For example, by giving learners control over their learning pathway, guided by AI, a recent client saw a 30% increase in course completion rates and a 15% improvement in knowledge retention.</p>
+                            <p>Let's be honest, we've all been there: clicking through endless slides of mind-numbing training content, feeling our will to live slowly ebb away. It's like being trapped in a digital purgatory, where the "Next" button is the only glimmer of hope. I've felt that pain, that existential dread of another pointless training module. And I decided I wasn't going to take it anymore. I made it my life's work to rescue learners from this digital abyss and inject some much-needed life back into learning.</p>
+                            <p>While other instructional designers were busy alphabetizing their font collections, I was in the trenches, figuring out how to create experiences that people actually enjoyed and that demonstrably improved their skills. I've spent years honing my craft, experimenting with unconventional techniques (like that time I used a blindfolded, trust-building exercise to help a team overcome communication barriers and achieve a seemingly impossible goal, the office bully even became a team player!) and pushing the boundaries of what's possible in the world of learning.</p>
+                            <p>I'm a student of human behavior, both in life and academia, which means I can not only tell you why your $800,000, 3-day leadership offsite failed to move the needle on any of your performance metrics but also back it up with scientific evidence. My expertise in human motivation means I can help you see that sales training alone won't lead to double-digit profit growth, and then show you what will work. (Hint: it involves understanding what truly motivates your people.) For example, by implementing a gamified learning platform for a recent client, we saw a 30% increase in course completion rates and a 15% improvement in knowledge retention.</p>
                             <h3>What Makes Me Tick?</h3>
                             <ul class="tickList">
                                 <li><strong>Embracing Technology to Drive Results</strong>: This is an incredibly exciting time to be in learning. I'm driven to innovate and discover what's possible, leveraging the latest tech to create impactful experiences for your learners. For example, we can now build a virtual reality experience with an AI-powered role-play partner that enables your team to hone their negotiation skills in a safe, realistic environment. And yes, the system can automatically adjust the difficulty level as it tracks and evaluates each learner's progress. For your learners this means they can practice in a realistic environment and master skills faster.</li>
@@ -142,7 +145,7 @@
                                 <li><strong>The Power of Possibility</strong>: I believe that anyone can learn anything with the right approach. By understanding individual learning styles and motivations, I create tailored experiences that unlock each learner's potential.</li>
                             </ul>
                             <aside class="callout warning-callout">
-                                <p><strong>Working with me might result in:</strong> a noticeable increase in learner engagement and knowledge retention, a significant boost in the ROI of your training programs, and a newfound enthusiasm for learning within your organisation. You might even catch your employees having fun while they learn. Consider yourself warned.</p>
+                                <p><strong>Working with me might result in:</strong> a noticeable increase in learner engagement and knowledge retention, a significant boost in the ROI of your training programs, and a newfound enthusiasm for learning within your organization. You might even catch your employees having fun while they learn. Consider yourself warned.</p>
                             </aside>
                         </div>
                     </div>
@@ -204,7 +207,7 @@
             <div class="container">
                 <h2 id="contact-title" class="section-title">Contact Us</h2>
                 <p>Have a question? Or keen to discuss how we can work together? Fill out our contact form, and we will respond within one business day.</p>
-                <form id="contact-form" class="contact-form" method="POST" action="https://formsubmit.co/your-email-here">
+                <form id="contact-form" class="contact-form" method="POST" action="your-form-handler-url">
                     <fieldset>
                         <legend class="sr-only">Contact Form</legend>
                         <div class="form-group">
@@ -223,13 +226,12 @@
                             <div class="error-message" id="message-error"></div>
                         </div>
                         <input type="hidden" name="_honey" style="display:none">
-                        <input type="hidden" name="_next" value="your-website-thank-you-page">
+                        <input type="hidden" name="_next" value="your-thank-you-page">
 
                         <button type="submit" class="button form-button">Send Message</button>
                         <div class="success-message" id="form-success"></div>
                     </fieldset>
                 </form>
-                <div class="success-message" id="form-success"></div>
             </div>
         </section>
     </main>
