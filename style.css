@@ -119,10 +119,6 @@ body {
     position: relative;
 }
 
-.site-header.shrunken .header-content {
-    z-index: 60; /* Maintain z-index when header is shrunken */
-}
-
 .logo-link {
     display: flex;
     align-items: center;
@@ -159,13 +155,17 @@ body {
     border: none;
     cursor: pointer;
     padding: 10px;
-    z-index: 60; /* Ensure the toggle is above other elements */
+    z-index: 70; /* Ensure the toggle is above other elements */
+}
+
+/* Change menu toggle color when header shrinks */
+.site-header.shrunken .menu-toggle i {
+    color: #fff; /* White color */
 }
 
 .site-header.shrunken .menu-toggle {
     display: block; /* Show when header is shrunken */
 }
-
 
 .menu-toggle i {
     font-size: 2rem;
@@ -210,10 +210,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 120vh;
+    min-height: 80vh;
+    background: url("images/hero.jpeg") center/cover no-repeat;
 }
 
-/* This was the critical fix for the hero image */
 .hero::before {
     content: '';
     position: absolute;
@@ -221,31 +221,16 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("images/hero.jpeg"); /* Set background image here */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     background-color: rgba(0, 0, 0, 0.65);
-    z-index: -1; /* Ensure image is behind the text */
-}
-
-.hero-image-container {
-    display: none;
-}
-
-.hero-image {
-    display: none;
+    z-index: -1;
 }
 
 .hero-text-container {
-    position: relative;
-    z-index: 1;
     background-color: rgba(0, 0, 0, 0.65);
     color: var(--primary-color);
     padding: 50px 20px;
     width: 100%;
     max-width: 800px;
-    position: relative;
     z-index: 1;
 }
 
@@ -259,113 +244,169 @@ body {
 
 /* --- 6. INTRO SECTION --- */
 .intro {
-    padding: 80px 0 80px 0;
-    background: linear-gradient(to bottom, #90ee90 0%, #373737 100%); /* Example gradient */
+    padding: 80px 0;
+    background: linear-gradient(to bottom, #90ee90 0%, #373737 100%);
     animation: gradientAnimation 10s ease infinite;
-    position: relative; /* For the optional overlay and particles */
+    position: relative;
     margin-top: 0;
-  }
-  
-  /* Optional: Background Animation */
-  @keyframes gradientAnimation {
+}
+
+@keyframes gradientAnimation {
     0% {
-      background-position: 0% 50%;
+        background-position: 0% 50%;
     }
     50% {
-      background-position: 100% 50%;
+        background-position: 100% 50%;
     }
     100% {
-      background-position: 0% 50%;
+        background-position: 0% 50%;
     }
-  }
-  
-  /* Optional: Color Overlay */
-  .intro::before {
+}
+
+.intro::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.2); /* Adjust overlay transparency as needed */
+    background-color: rgba(0, 0, 0, 0.2);
     z-index: 0;
-  }
-  
-  .intro-content {
-    display: grid;
+}
+
+.intro-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 40px;
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
-    position: relative; /* Ensure content is above the overlay/particles */
+    position: relative;
     z-index: 1;
-  }
-  
-  .intro-callout {
+    padding: 40px;
+}
+
+.intro-box-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.intro-image {
+    margin-bottom: 20px;
+    max-width: 45%;
+    height: auto;
+}
+
+.float-left {
+    float: left;
+    margin: 0 20px 20px 0;
+}
+
+.float-right {
+    float: right;
+    margin: 0 0 20px 20px;
+}
+
+.intro-callout {
     color: var(--primary-color);
     border: 2px solid var(--primary-color);
-  }
-  
-  /* Styling for intro boxes */
-  .intro-box {
-      background-color: #fff; /* Solid white background */
-      color: #000; /* Black text color */
-      padding: 30px;
-      border-radius: 10px; /* Rounded corners */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle drop shadow */
-  }
-  
-  .intro-box-highlight {
-      color: var(--text-color-light);
-  }
-  
-  .intro-box-highlight h3 {
-      color: var(--primary-color);
-  }
-  
-  .intro-box h3 {
-      color: var(--primary-color);
-  }
-  
-  .intro-list li::before {
-      color: #000;
-  }
-  
-  .intro-box,
-  .intro-callout {
+}
+
+.intro-box {
+    background-color: #fff;
+    color: #000;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Removed width: 100%; */
+}
+
+.intro-box-highlight {
+    color: var(--text-color-light);
+    clear: both;
+    margin-top: 20px;
+}
+
+.intro-box-highlight h3 {
+    color: var(--primary-color);
+}
+
+.intro-box h3 {
+    color: var(--primary-color);
+}
+
+.intro-list li::before {
+    color: #000;
+}
+
+.intro-box,
+.intro-callout {
     border: none;
-  }
-  
-  /* Optional: Particles.js Container (if using Particles.js) */
-  #particles-js {
+}
+
+#particles-js {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    z-index: 0; /* Behind the text content */
-  }
+    z-index: 0;
+}
 
-  .intro-box-highlight {
-    background-color: var(--secondary-color); /* Background color for the second box */
-    color: var(--text-color-light); /* White text color */
+.intro-box-highlight {
+    background-color: var(--secondary-color);
+    color: var(--text-color-light);
 }
 
 .intro-box-highlight h3 {
-    color: var(--primary-color); /* Primary color for heading */
+    color: var(--primary-color);
 }
 
 .intro-box-highlight .intro-list li::before {
-    color: #fff; /* White bullet points */
+    color: #fff;
 }
 
 .intro-callout {
-    background-color: var(--primary-color); /* Green background color */
-    color: #000; /* Black text color */
+    background-color: var(--primary-color);
+    color: #000;
     border: 2px solid var(--primary-color);
     padding: 30px;
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle drop shadow */
-  }
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes floatAnimationLeft {
+    0% {
+        transform: translateX(-100px) rotate(-5deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0) rotate(0);
+        opacity: 1;
+    }
+}
+
+@keyframes floatAnimationRight {
+    0% {
+        transform: translateX(100px) rotate(5deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0) rotate(0);
+        opacity: 1;
+    }
+}
+
+[data-aos="float-image-animation-left"] {
+    animation: floatAnimationLeft 1s ease-out forwards;
+}
+
+[data-aos="float-image-animation-right"] {
+    animation: floatAnimationRight 1s ease-out forwards;
+}
+
 /* --- 7. WORK SECTION --- */
 .work {
     background-color: var(--background-color);
@@ -831,6 +872,19 @@ a:hover {
     margin-bottom: 0
 }
 
+.tickList ul {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 0; /* Or a specific value if you want indentation */
+  }
+  
+  .tickList li {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 25px; /* Space between list items */
+    padding: 10px; /* Padding within each list item */
+  }
+
 .warning-callout p strong {
     color: var(--primary-color);
     display: block;
@@ -949,9 +1003,11 @@ a:hover {
         z-index: 60;
     }
 
+    /* Ensure menu toggle is visible when header is shrunken and change color to white*/
     .site-header.shrunken .menu-toggle {
-        display: block; /* Ensure menu toggle is visible when the header is shrunken */
-        z-index: 60; /* Maintain z-index */
+        display: block; 
+        z-index: 60; 
+        color: #fff
     }
 
     /* Make the menu toggle more visible */
@@ -968,13 +1024,14 @@ a:hover {
 
     /* Style the mobile navigation when it's open */
     .site-nav.open .nav-list {
-        display: flex; /* Corrected: Display the navigation list when open */
+        display: flex; 
         flex-direction: column;
         width: 100%;
         position: absolute;
         top: 70px; /* Adjust this to match your shrunken header height */
         left: 0;
         background-color: var(--secondary-color);
+        z-index: 65; /* Ensure the menu is above other elements */
     }
 
     .nav-list {
@@ -1005,21 +1062,47 @@ a:hover {
     .title-subtitle {
         display: none;
     }
+
+    /* Intro Section - Stack images above text boxes */
+    .intro-image {
+        float: none; /* Remove float */
+        max-width: 90%; /* Adjust image width */
+        display: block;
+        margin: 0 auto 20px auto; /* Center the images */
+    }
+
+    .float-left,
+    .float-right {
+      float: none; /* Remove float */
+      margin: 0 auto 20px auto; /* Center and add margin */
+      max-width: 90%; /* Adjust image width */
+      display: block;
+    }
+
+    .intro-box-wrapper {
+        flex-direction: column; /* Stack elements vertically */
+    }
+
+    .intro-box,
+    .intro-box-highlight,
+    .intro-callout {
+        margin-bottom: 20px; /* Add spacing between stacked elements */
+    }
 }
 
-/* Intro Section, About Section, Process Section */
+/* Intro Section, About Section, Process Section - Adjust layouts */
 @media (min-width: 769px) and (max-width: 990px) {
     .intro-content {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Single column layout */
         align-items: center;
     }
 
     .intro-callout {
-        grid-column: span 1;
+        grid-column: span 1; /* Span only one column */
     }
 
     .about-content {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;  /* Single column layout */
     }
 
     #processSteps {
@@ -1033,16 +1116,43 @@ a:hover {
     #processSteps.wrapped {
         justify-content: center;
     }
+
+    /* Intro Section - Stack image and text boxes vertically */
+    .intro-box-wrapper {
+        flex-direction: column;
+    }
 }
 
+/* Large Screens */
 @media (min-width: 991px) {
     .intro-content {
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
+        display: block;
     }
+
+    .intro-box,
+    .intro-box-highlight,
+    .intro-callout {
+        width: auto;
+        max-width: none;
+}
+
+    .intro-image {
+        max-width: 45%;
+}
+
+    .intro-box {
+        margin-bottom: 0;
+}
+
+    .intro-box-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+}
     
     .intro-callout {
-        grid-column: span 2;
+        clear: both;
     }
     
     .about-content {
